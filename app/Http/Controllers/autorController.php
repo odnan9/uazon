@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Database\libros;
 use Illuminate\Http\Request;
+use App\Database\autores;
 
-class libroController extends Controller
+class autorController extends Controller
 {
     public function __construct()
     {
@@ -14,6 +14,6 @@ class libroController extends Controller
 
     public function index()
     {
-        return view('libro');
+        return view('autor', ['seo_title'=>'Detalles del autor']);
     }
 }

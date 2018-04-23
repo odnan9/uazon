@@ -1,17 +1,19 @@
-<!-- Main footer
-     ------------------------------------------------------------------------------ -->
-<footer>
+<!-- Main footer -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
 
-    <!-- Copyright -->
-    <p>@copyright</p>
+            <!-- Copyright -->
+            <p>@copyright</p>
 
-    <!-- Terms and conditions -->
-    <ul>
-        <li><a href="privacy-policy.html">Privacidad</a></li>
-        <li><a href="legal-advice.html">Aviso legal</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-        <li><a href="sitemap.html">Sitemap</a></li>
-        <li><a href="rss.html">RSS</a></li>
-    </ul>
-
-</footer>
+            <!-- Terms and conditions -->
+            <ul class="nav navbar-nav">
+                <li><a href="{{ route('login') }}">Privacidad</a></li>
+                <li><a href="{{ route('login') }}">Aviso legal</a></li>
+                <li><a href="{{ route('login') }}">Contacto</a></li>
+                <li><a href="{{ route('login') }}">Sitemap</a></li>
+                <li><a href="{{ route('login') }}">RSS</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

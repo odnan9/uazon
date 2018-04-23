@@ -35,9 +35,19 @@ Route::get('/', function () {
 // Home route
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Book route
-Route::get('/libro/{$id}', 'libroController@index')->name('libro');
+// Libros routes
+Route::get('/libros', 'librosController@index')->name('libros');
+Route::get('/libro/{$id}', 'libroController@index');
+
+// Autores routes
+Route::get('/autores', 'autoresController@index')->name('autores');
+Route::get('/autor/{$id}', 'autorController@index')->name('autor');
 
 // CMS routes
 Route::get('/reviews', 'ReviewController@show')->name('reviews_get');
 Route::post('/form','ReviewController@store');
+
+// Angula route
+Route::get('/{js_route}', function() {
+    return view('application');
+})->where('js_route', '(.*)'); // Allow multiple URI segments

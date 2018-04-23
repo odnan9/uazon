@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Database\libros;
 use Illuminate\Http\Request;
 
-class libroController extends Controller
+class librosController extends Controller
 {
     public function __construct()
     {
@@ -14,6 +14,7 @@ class libroController extends Controller
 
     public function index()
     {
-        return view('libro');
+        $listaLibros = libros::all();
+        return view('libros', ['seo_title'=>'Listado de libros','listadoLibros' => $listaLibros]);
     }
 }

@@ -16,21 +16,19 @@
             <div class="col-md-6">
 
                 <!-- Header tools -->
-                <!--
                 <ul>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="signup.html">Registrarse</a></li>
                     <li><a href="shopping-cart.html">Carrito de la compra</a></li>
                 </ul>
-                -->
             </div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <?php // include '_navigation.php' ?>
+    <?php include '_navigation.php' ?>
 
     <!-- Search Widget -->
-    <?php // include '_search_widget.php' ?>
+    <?php include '_search_widget.php' ?>
 
 </header>
