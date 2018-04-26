@@ -1,14 +1,16 @@
 {
   "name": "uazon-cms",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run tsc:w",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
   },
   "private": true,
   "dependencies": {
@@ -21,8 +23,17 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "angular-ui-router": "^1.0.3",
+    "bootstrap": "^4.1.0",
     "core-js": "^2.4.1",
+    "es6-promise": "^4.2.4",
+    "es6-shim": "^0.35.3",
+    "polyfills": "^2.1.1",
+    "polyfills-db": "^3.0.0",
+    "reflect-metadata": "^0.1.12",
     "rxjs": "^5.5.6",
+    "satellizer": "^0.15.5",
+    "systemjs": "^0.21.3",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

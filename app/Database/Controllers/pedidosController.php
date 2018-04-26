@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 
 class pedidosController extends Controller
 {
+    public function index()
+    {
+        return pedidos::all();
+    }
+
     public function show($id)
     {
         return pedidos::find($id);

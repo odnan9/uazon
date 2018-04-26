@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 
 class comentariosController extends Controller
 {
+    public function index()
+    {
+        return comentarios::all();
+    }
+
     public function show($id)
     {
         return comentarios::find($id);

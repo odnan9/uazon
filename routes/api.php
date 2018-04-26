@@ -13,10 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
+//Route::group(['middleware' => 'auth:api'], function() {
 /*
  * autores table api routes
  */
@@ -97,3 +98,5 @@ Route::get('pedidos/{id}', '\App\Database\Controllers\pedidosController@show');
 Route::post('pedidos', '\App\Database\Controllers\pedidosController@store');
 Route::put('pedidos/{id}', '\App\Database\Controllers\pedidosController@update');
 Route::delete('pedidos/{id}', '\App\Database\Controllers\pedidosController@delete');
+
+//});

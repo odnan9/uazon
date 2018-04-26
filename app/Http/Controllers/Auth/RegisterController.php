@@ -36,7 +36,6 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-//        public $cities = ciudades::all();
         $this->middleware('guest');
     }
 

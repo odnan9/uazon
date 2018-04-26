@@ -13,9 +13,6 @@ class User extends Authenticatable
     protected $keyType = 'string';
     protected $primaryKey = 'id';
 
-//    protected $casts = [
-//        'admin' => 'boolean',
-//    ];
 
     /**
      * The attributes that are mass assignable.
@@ -34,9 +31,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-//    public static function create($callback)
-//    {
-//        info('This is just a NANDO TEST');
-//    }
 }
