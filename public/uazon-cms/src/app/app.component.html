@@ -1,8 +1,17 @@
 <div class="container">
     <h2>Autores</h2>
-    <ul>
-        <li *ngFor="let autor of autores">{{autor.nombre}}</li>
-    </ul>
+    <!--<ul>-->
+        <!--<li *ngFor="let autor of autores">{{autor.nombre}}</li>-->
+    <!--</ul>-->
+    <table *ngIf="autores">
+        <tr>
+            <th>Nombre</th>
+        </tr>
 
+        <tr *ngFor="let autor of autores">
+            <td>{{ autor.nombre }}</td>
+        </tr>
+    </table>
 
+    <!--<app-passport></app-passport>-->
 </div>

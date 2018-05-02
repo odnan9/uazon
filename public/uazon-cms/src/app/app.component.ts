@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {ApiService} from '../shared/services/api/api.service';;
-import {Observable} from 'rxjs/Rx';
+import { ApiService } from '../shared/services/api/api.service';;
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
@@ -13,16 +13,34 @@ export class AppComponent {
   public autores;
   constructor(private _apiService: ApiService) { }
 
-  ngOnInit() {
-    this.getAutores();
+  setAutores(aut) {
+    this.autores = aut;
+  }
+  getAutores() {
+    return this.autores;
   }
 
-  getAutores() {
-    this._apiService.get('autores').subscribe(
-        data => { this.autores = data },
-        err => console.error(err),
-        () => console.log('done loading foods')
-    );
+  ngOnInit() {
+    this.getAPIAutores();
+  }
+
+  getAPIAutores() {
+    return this._apiService.getData()
+      .subscribe(
+          data => {
+            this._apiService.setToken(data),
+                setTimeout(() => {
+                  this._apiService.get('autores')
+                      .subscribe(
+                          data => {
+                            this.autores = data
+                          },
+                              err => console.error(err),
+                          () => console.log('Done loading data from API...')
+                    );
+                }, 100);
+            },
+      );
   }
 }
 

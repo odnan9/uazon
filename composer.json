@@ -10,11 +10,11 @@
         "barryvdh/laravel-ide-helper": "^2.4",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
+        "laravel/passport": "4.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.2.0",
-        "sentry/sentry": "^1.8",
-        "tymon/jwt-auth": "dev-develop"
+        "sentry/sentry": "^1.8"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

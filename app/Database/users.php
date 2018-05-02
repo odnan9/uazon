@@ -2,20 +2,17 @@
 
 namespace App\Database;
 
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
 
     protected $table='users';
     protected $keyType = 'string';
     protected $primaryKey = 'id';
-
-//    protected $casts = [
-//        'admin' => 'boolean',
-//    ];
 
     /**
      * The attributes that are mass assignable.
@@ -34,9 +31,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-//    public static function create($callback)
-//    {
-//        info('This is just a NANDO TEST');
-//    }
 }

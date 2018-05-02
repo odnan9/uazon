@@ -7,11 +7,13 @@ import { ApiService } from '../shared/services/api/api.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PassportComponent } from './passport/passport.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        PassportComponent
     ],
     imports: [
         BrowserModule,
@@ -19,14 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
         HttpClientModule,
         FormsModule
     ],
-    providers: [ ApiService
-        // {
-        //     provide: ApiService,
-        //     useFactory: (backend, options) => {
-        //       return new ApiService(backend,options);
-        //     }
-        // }
-    ],
-    bootstrap: [AppComponent]
+    providers: [ ApiService ],
+    bootstrap: [ AppComponent ]
 })
 export class AppModule { }

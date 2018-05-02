@@ -11,7 +11,6 @@
     <title>{{ config('app.name', 'Uazon') }}</title>
 
     <!-- Styles -->
-    {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('assets/styles/main.css') }}" rel="stylesheet">
 </head>
 <body>
