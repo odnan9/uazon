@@ -1,0 +1,33 @@
+<div class="row container-fluid">
+  <div class="col-md-12">
+    <div class="row">
+      <p>Dashboard</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <table *ngIf="autores">
+            <tr>
+              <th>Nombre</th>
+            </tr>
+            <tr *ngFor="let autor of autores">
+              <td>{{ autor.nombre}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <table *ngIf="libros">
+            <tr>
+              <th>Titulo</th>
+            </tr>
+            <tr *ngFor="let libro of libros">
+              <td>{{ libro.titulo}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

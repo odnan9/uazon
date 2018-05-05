@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+/*<style type="text/css" rel="stylesheet" href="public/uazon-cms/node_modules/bootstrap/dist/css/bootstrap.min.css"></style>*/
+/*@import url("../../uazon-cms/node_modules/bootstrap/dist/css/bootstrap.min.css");*/
+@import url("../../../public/assets/styles/cms.css");
+/*<!--<style type="text/css" rel="stylesheet" href="public/assets/styles/cms.css"></style>-->*/
+/*@import url("../../assets/styles/cms.css");*/
+/*<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">*/
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
