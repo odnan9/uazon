@@ -1,0 +1,49 @@
+<div class="col-md-10">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{libro['titulo']}}</h3>
+          </div>
+          <div class="panel-body form-group">
+            <div class="input-group col-xs-4">
+              <label class="control-label col-sm-2" for="titulo">Título</label>
+              <input [ngModel]="libro['titulo']" type="text" class="form-control" placeholder="Título" id="titulo">
+            </div>
+            <div class="input-group col-xs-4">
+              <label class="control-label col-sm-2" for="titulo">Autor</label>
+              <input [ngModel]="libro['autor']" type="text" class="form-control" placeholder="Autor">
+            </div>
+            <div class="input-group col-xs-4">
+              <label class="control-label col-sm-2" for="titulo">Editorial</label>
+              <input [ngModel]="libro['editorial']" type="text" class="form-control" placeholder="Editorial">
+            </div>
+            <div class="input-group col-xs-4">
+              <label class="control-label col-sm-2" for="titulo">ISBN</label>
+              <input [ngModel]="libro['isbn']" type="text" class="form-control" placeholder="ISBN">
+            </div>
+            <div class="input-group col-xs-4">
+              <label class="control-label col-sm-6" for="titulo">Número de páginas</label>
+              <input [ngModel]="libro['n_pags']" type="text" class="form-control" placeholder="Título">
+            </div>
+            <br>
+          </div>
+        <form>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">Text</span>
+            <input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Info">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

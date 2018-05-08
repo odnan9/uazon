@@ -15,7 +15,6 @@ export class ApiService {
         .set('Accept', 'application/json');
     params = new HttpParams();
     options = {};
-    options2 = {};
     token: string = "";
 
     constructor(private _http: HttpClient) {}

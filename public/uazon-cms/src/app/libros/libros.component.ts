@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../shared/services/api/api.service';
+import { LibrosCustomRenderComponent } from "./libros-custom-reder.component";
 
 @Component({
   selector: 'app-libros',
@@ -16,10 +17,10 @@ export class LibrosComponent implements OnInit {
     this.getAPILibros();
     this.settings = {
       actions: {
-        columnTitle: 'WHAT??',
-        add: true,
-        delete: true,
-        edit: true,
+        columnTitle: '',
+        add: false,
+        delete: false,
+        edit: false,
         position: 'right'
       },
       columns: {
@@ -32,7 +33,9 @@ export class LibrosComponent implements OnInit {
         titulo: {
           title: 'Título del libro',
           width: '35%',
-          sort: true
+          sort: true,
+          type: 'custom',
+          renderComponent: LibrosCustomRenderComponent,
         },
         editorial: {
           title: 'Editorial',
@@ -43,6 +46,14 @@ export class LibrosComponent implements OnInit {
           title: 'ISBN',
           width: '15%',
           sort: true
+        },
+        test: {
+          title: 'DELETE',
+          sort: false,
+          editable: false,
+          filter: false,
+          type: 'custom',
+          renderComponent: LibrosCustomRenderComponent,
         }
       }
     };

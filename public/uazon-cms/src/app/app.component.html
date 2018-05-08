@@ -1,35 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <nav class="navbar navbar-default">
+      <div class="row">
+        <div class="col-md-12">
+          Login bar Login bar Login bar Login bar Login bar Login bar Login bar Login bar Login bar Login bar Login bar Login bar Login bar Login bar Login bar
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-2">
-          <div class="navbar-header">
-            <a class="navbar-brand">
+          <div >
+            <a >
               <img src="assets/favicon96x96.png" class="logo">
             </a>
           </div>
         </div>
-        <div class="col-md-8 offset-3">
-          <ul class="nav navbar-nav">
-            <div class="navbar-header active">
-              <a routerLink="/dashboard" routerLinkActive="active">
-                <span class="sr-only">UAZON CMS</span>
-              </a>
-            </div>
-            <div class="navbar-nav active">
-              <a class="navbar-brand" routerLink="/dashboard" routerLinkActive="active"><i class="fa fa-home fa-3x"></i></a>
-            </div>
-            <div class="active">
-              <a class="navbar-brand" routerLink="/libros" routerLinkActive="active"><i class="fa fa-book fa-3x"></i></a>
-            </div>
-            <div class="active">
-              <a class="navbar-brand" routerLink="/autores" routerLinkActive="active"><i class="fa fa-address-book fa-3x"></i></a>
-            </div>
-          </ul>
+        <div class="col-md-10 center-icons">
+          <a routerLink="/dashboard" routerLinkActive="active"><i class="fa fa-home fa-3x"></i></a>
+          <a routerLink="/libros" routerLinkActive="active"><i class="fa fa-book fa-3x"></i></a>
+          <a routerLink="/autores" routerLinkActive="active"><i class="fa fa-address-book fa-3x"></i></a>
         </div>
-      </nav>
+      </div>
     </div>
   </div>
 </div>
 <hr>
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
