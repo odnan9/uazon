@@ -39,7 +39,7 @@ export class AutoresComponent implements OnInit {
   }
 
   getAPIAutores() {
-    return this._apiService.getData()
+    return this._apiService.prepareAPICall()
     .subscribe(
       data => {
         this._apiService.setToken(data),

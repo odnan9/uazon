@@ -28,7 +28,8 @@ export class LibrosComponent implements OnInit {
           title: 'ID',
           width: '6%',
           sort: true,
-          editable: false
+          editable: false,
+          filter: false,
         },
         titulo: {
           title: 'Título del libro',
@@ -46,21 +47,13 @@ export class LibrosComponent implements OnInit {
           title: 'ISBN',
           width: '15%',
           sort: true
-        },
-        test: {
-          title: 'DELETE',
-          sort: false,
-          editable: false,
-          filter: false,
-          type: 'custom',
-          renderComponent: LibrosCustomRenderComponent,
         }
       }
     };
   }
 
   getAPILibros() {
-    return this._apiService.getData()
+    return this._apiService.prepareAPICall()
     .subscribe(
       data => {
              this._apiService.setToken(data),

@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getAPIAutores() {
-    return this._apiService.getData()
+    return this._apiService.prepareAPICall()
     .subscribe(
       data => {
         this._apiService.setToken(data),
@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
     );
   }
   getAPILibros() {
-    return this._apiService.getData()
+    return this._apiService.prepareAPICall()
     .subscribe(
       data => {
         this._apiService.setToken(data),

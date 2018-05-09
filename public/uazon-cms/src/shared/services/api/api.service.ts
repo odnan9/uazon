@@ -19,7 +19,7 @@ export class ApiService {
 
     constructor(private _http: HttpClient) {}
 
-    public getData() {
+    public prepareAPICall() {
         return this.getToken()
             .do(data => {
                 this.setToken(data);
@@ -42,6 +42,18 @@ export class ApiService {
 
     public get(apiEndpoint) {
         return this._http.get(env.apiPath + apiEndpoint, this.options).map(response => response);
+    }
+
+    public post(apiEndpoint, postData) {
+      return this._http.post(env.apiPath + apiEndpoint, postData, this.getOptions()).map(response => response);
+    }
+
+    public put(apiEndpoint, postData) {
+      return this._http.put(env.apiPath + apiEndpoint, postData, this.getOptions()).map(response => response);
+    }
+
+    public delete(apiEndpoint, postData) {
+      return this._http.delete(env.apiPath + apiEndpoint, this.getOptions()).map(response => response);
     }
 
     public setAccessToken(token) {
