@@ -1,12 +1,15 @@
-<div class="col-md-10">
+<div class="col-md-12">
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default">
-        <div class="panel-heading text-align--center">
-          <p class="">Libros en UAZON</p>
-          <button type="button" class="btn btn-info pull-right" (click)="deleteAPILibroInfo()">
-            <i class="fa fa-plus"></i>
-          </button>
+        <div class="panel-heading">
+          <h2 class="text-center">
+            <i class="fa fa-book"></i>
+            Libros en UAZON
+            <button [routerLink]="['/libros','new']" routerLinkActive="active" type="button" class="btn btn-info pull-right" title="Nuevo libro">
+              <i class="fa fa-plus"></i>
+            </button>
+          </h2>
         </div>
         <div class="panel-body">
           <ng2-smart-table [settings]="settings" [source]="libros"></ng2-smart-table>

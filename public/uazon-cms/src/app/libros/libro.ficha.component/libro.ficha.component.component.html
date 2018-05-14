@@ -2,25 +2,30 @@
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default">
-          <div class="panel-heading" >
+          <div class="panel-heading">
             <h2 class="panel-info">{{libro['titulo']}}
-              <button type="button" class="btn btn-danger pull-right" (click)="deleteAPILibroInfo()">
+              <button type="button" class="btn btn-danger pull-right" (click)="deleteAPILibroInfo()" title="Borrar libro">
                 <i class="fa fa-trash"></i>
+              </button>
+              <button type="button" class="btn btn-warning pull-right" (click)="goBack()" title="Atrás">
+                <i class="fa fa-arrow-left"></i>
               </button>
             </h2>
           </div>
           <div class="panel-body">
+            <form>
             <div class="row">
               <div class="col-md-6">
                 <div class="input-group col-xs-10">
+
                   <label class="control-label col-sm-2" for="titulo">Título</label>
-                  <input [(ngModel)]="libro['titulo']" type="text" class="form-control" placeholder="Título" id="titulo">
+                  <input [(ngModel)]="libro['titulo']" type="text" class="form-control" placeholder="Título" id="titulo" name="tituloLibroForm">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="input-group col-xs-10">
-                  <label class="control-label col-sm-2" for="titulo">Autor</label>
-                  <input [(ngModel)]="libro['autor']" type="text" class="form-control" placeholder="Autor">
+                  <label class="control-label col-sm-2" for="editorial">Editorial</label>
+                  <input [(ngModel)]="libro['editorial']" type="text" class="form-control" placeholder="Editorial" id="editorial" name="editorialLibroForm">
                 </div>
               </div>
             </div>
@@ -28,8 +33,16 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="input-group col-xs-10">
-                  <label class="control-label col-sm-2" for="titulo">Autor</label>
-                  <input [(ngModel)]="libro['autor']" type="text" class="form-control" placeholder="Autor">
+                  <label class="control-label col-sm-2" for="autor">Autor</label>
+                  <select [(ngModel)]="libro['autores_id']" class="form-control" placeholder="Autor" id="autor" name="autorLibroForm">
+                    <option *ngFor="let autor of autores" [ngValue]="autor.autores_id-0">{{autor.nombre}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group col-xs-10">
+                  <label class="control-label col-sm-2" for="isbn">ISBN</label>
+                  <input [(ngModel)]="libro['isbn']" type="number" class="form-control" placeholder="ISBN" id="isbn" name="isbnLibroForm">
                 </div>
               </div>
             </div>
@@ -37,8 +50,14 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="input-group col-xs-10">
-                  <label class="control-label col-sm-2" for="titulo">Editorial</label>
-                  <input [(ngModel)]="libro['editorial']" type="text" class="form-control" placeholder="Editorial">
+                  <label class="control-label col-sm-2" for="precio">Precio</label>
+                  <input [(ngModel)]="libro['precio']" type="number" step="0.01" class="form-control" placeholder="Precio" id="precio" name="precioLibroForm">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group col-xs-10">
+                  <label class="control-label col-sm-6" for="n_pags">Número de páginas</label>
+                  <input [(ngModel)]="libro['n_pags']" type="number" class="form-control" placeholder="Número de páginas" id="n_pags" name="npagsLibroForm">
                 </div>
               </div>
             </div>
@@ -46,23 +65,36 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="input-group col-xs-10">
-                  <label class="control-label col-sm-2" for="titulo">ISBN</label>
-                  <input [(ngModel)]="libro['isbn']" type="number" class="form-control" placeholder="ISBN">
+                  <label class="control-label col-sm-2" for="voto">Votos</label>
+                  <input [(ngModel)]="libro['voto']" type="number" class="form-control" placeholder="Voto" id="voto" name="votoLibroForm">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group col-xs-10">
+                  <label class="control-label col-sm-6" for="num_voto">Número de votos</label>
+                  <input [(ngModel)]="libro['num_voto']" type="number" class="form-control" placeholder="Número de votos" id="num_voto" name="numvotoLibroForm">
                 </div>
               </div>
             </div>
-            <br>
+            <hr>
             <div class="row">
               <div class="col-md-6">
                 <div class="input-group col-xs-10">
-                  <label class="control-label col-sm-6" for="titulo">Número de páginas</label>
-                  <input [(ngModel)]="libro['n_pags']" type="number" class="form-control" placeholder="Título">
+                  <label class="control-label col-sm-6" for="imagen_file">Imagen del libro</label>
+                    <input (change)="imagePathChange()" type="file" class="form-control" placeholder="Ruta de la foto" id="imagen_file" name="imagenLibroForm">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group col-xs-10">
+                  <img src="http://localhost:8000/uploads/images/books/origen-dan-brown.png" alt="{{libro['titulo']}}" style="display:block;width:100px;height:auto;border:0;">
                 </div>
               </div>
             </div>
+            </form>
           </div>
           <div class="panel-footer">
-            <button type="button" class="btn btn-success pull-right" (click)="putAPILibroInfo()">Save changes</button>
+            <button *ngIf="libroId['id'] === 'new'? true : false" type="button" class="btn btn-success pull-right" (click)="postAPILibroInfo()">Save changesPost</button>
+            <button *ngIf="libroId['id'] === 'new'? false : true" type="button" class="btn btn-success pull-right" (click)="putAPILibroInfo()">Save changesPut</button>
             <div class="clearfix">
           </div>
       </div>

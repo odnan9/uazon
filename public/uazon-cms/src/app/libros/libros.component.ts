@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../shared/services/api/api.service';
-import { LibrosCustomRenderComponent } from "./libros-custom-reder.component";
+import { ApiService } from '../shared/services/api/api.service';
+import { LibrosCustomRenderComponent } from "./libros-custom-render.component";
 
 @Component({
   selector: 'app-libros',
@@ -46,7 +46,10 @@ export class LibrosComponent implements OnInit {
         isbn: {
           title: 'ISBN',
           width: '15%',
-          sort: true
+          sort: true,
+          attr: {
+            class: "text-center"
+          }
         }
       }
     };

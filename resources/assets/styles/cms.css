@@ -8,6 +8,7 @@
 @import "2_generic/_box_sizing.css";
 @import "3_base/bootstrap.css";
 @import "3_base/_typography.css";
+@import "3_base/font-awesome.min.css";
 /*@import "3_base/_elements.css";*/
 /*@import "4_objects/_grid.css";*/
 /*@import "6_trumps/_helpers.css";*/

@@ -1,0 +1,53 @@
+<div class="col-md-10">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-info">{{comentario['autor']}}
+            <button type="button" class="btn btn-danger pull-right" (click)="deleteAPIComentarioInfo()" title="Borrar libro">
+              <i class="fa fa-trash"></i>
+            </button>
+            <button type="button" class="btn btn-warning pull-right" (click)="goBack()" title="Atrás">
+              <i class="fa fa-arrow-left"></i>
+            </button>
+          </h2>
+        </div>
+        <div class="panel-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group col-xs-10">
+                  <label class="control-label col-sm-6" for="autor">Autor del comentario</label>
+                  <input [(ngModel)]="comentario['autor']" type="text" class="form-control" placeholder="Autor" id="autor" name="autorComentarioForm">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group col-xs-10">
+                  <label class="control-label col-sm-2" for="libro">Libro</label>
+                  <input [(ngModel)]="comentario['fk_libros']" type="text" class="form-control" placeholder="Libro" id="libro" name="libroComentarioForm">
+                </div>
+              </div>
+            </div>
+            <br>
+            <hr>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="input-group col-md-11">
+                  <label class="control-label col-sm-6" for="comentario">Comentario sobre el libro</label>
+                  <textarea [(ngModel)]="comentario['descripcion']" class="form-control" placeholder="Comentario sobre el libro" id="comentario" name="comentarioComentarioForm" cols="40" rows="10"></textarea>
+                  <!--<input [(ngModel)]="comentario['descripcion']" type="text" class="form-control" placeholder="Comentario sobre el libro" id="comentario" name="comentarioComentarioForm">-->
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="panel-footer">
+          <button *ngIf="comentarioId['id'] === 'new'? true : false" type="button" class="btn btn-success pull-right" (click)="postAPIComentarioInfo()">Save changesPost</button>
+          <button *ngIf="comentarioId['id'] === 'new'? false : true" type="button" class="btn btn-success pull-right" (click)="putAPIComentarioInfo()">Save changesPut</button>
+          <div class="clearfix">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

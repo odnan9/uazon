@@ -21,9 +21,6 @@ Route::get('register', 'Auth\RegisterController@register');
 Route::post('register', 'Auth\RegisterController@register');
 
 // Password Reset Routes...
-//Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
-//Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
-//Route::post('password/reset', 'Auth\PasswordController@reset');
 Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
@@ -49,17 +46,6 @@ Route::get('/autor/{$id}', 'autorController@index')->name('autor');
 Route::get('/reviews', 'ReviewController@show')->name('reviews_get');
 Route::post('/form', 'ReviewController@store');
 
-//// Angular route
-//Route::get('/cms/{js_route}', function() {
-//    return File::get(public_path() . '/uazon-cms/src/index.html');;
-////    /var/www/html/uazon/public/uazon-cms/src/index.html
-//})->where('js_route', '(.*)'); // Allow multiple URI segments
-//
+Route::group(['middleware' => 'guest'], function() {});
 
-
-Route::group(['middleware' => 'guest'], function() {
-});
-
-Route::group(['middleware' => 'auth'], function() {
-
-});
+Route::group(['middleware' => 'auth'], function() {});

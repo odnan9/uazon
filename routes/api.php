@@ -13,9 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
 /*
  * autores table api routes
  */
@@ -62,9 +59,19 @@ Route::get('pedidos_libros/{id}', '\App\Database\Controllers\pedidos_librosContr
 Route::get('pedidos', '\App\Database\Controllers\pedidosController@index');
 Route::get('pedidos/{id}', '\App\Database\Controllers\pedidosController@show');
 /*
+ * upload files
+ */
+Route::post('upload/{id}', '\App\Http\Controllers\uploadController@store');
+//    Route::delete('upload/{id}', '\App\Database\Controllers\uploadController@delete');
+
+/*
  * Protected api routes
  */
 Route::middleware('auth:api')->group(function() {
+    # users
+    Route::get('user', function (Request $request) {
+        return $request->user();
+    });
     # autores
     Route::post('autores', '\App\Database\Controllers\autoresController@store');
     Route::put('autores/{id}', '\App\Database\Controllers\autoresController@update');

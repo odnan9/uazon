@@ -29,6 +29,7 @@
     "core-js": "^2.4.1",
     "es6-promise": "^4.2.4",
     "es6-shim": "^0.35.3",
+    "font-awesome": "^4.7.0",
     "ng2-smart-table": "^1.2.2",
     "ngx-bootstrap": "^2.0.4",
     "polyfills": "^2.1.1",

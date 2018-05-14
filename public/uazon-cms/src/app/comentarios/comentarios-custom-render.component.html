@@ -1,0 +1,5 @@
+<p><span style="font-weight: bold;">{{rowData['autor']}}</span> (
+  <a [routerLink]="['/libros',rowData['fk_libros']]" routerLinkActive="active">{{rowData['titulo']}}</a>
+  )
+</p>
+<p>{{rowData['descripcion']}}</p>

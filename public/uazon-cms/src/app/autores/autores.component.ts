@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../shared/services/api/api.service';
+import { ApiService } from '../shared/services/api/api.service';
+import { AutoresCustomRenderComponent } from "./autores-custom-render.component";
 
 @Component({
   selector: 'app-autores',
@@ -16,10 +17,10 @@ export class AutoresComponent implements OnInit {
     this.getAPIAutores();
     this.settings = {
       actions: {
-        columnTitle: 'WHAT??',
-        add: true,
-        delete: true,
-        edit: true,
+        columnTitle: '',
+        add: false,
+        delete: false,
+        edit: false,
         position: 'right'
       },
       columns: {
@@ -32,7 +33,9 @@ export class AutoresComponent implements OnInit {
         nombre: {
           title: 'Nombre del autor',
           width: '35%',
-          sort: true
+          sort: true,
+          type: 'custom',
+          renderComponent: AutoresCustomRenderComponent,
         }
       }
     };
@@ -55,5 +58,6 @@ export class AutoresComponent implements OnInit {
             );
             }, 100);
         },
-    );}
+    );
+  }
 }

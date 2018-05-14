@@ -1,3 +1,50 @@
-<p>
-  autor.ficha.component works!
-</p>
+<div class="col-md-10">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-info">{{autor['nombre']}}
+            <button type="button" class="btn btn-danger pull-right" (click)="deleteAPIAutorInfo()" title="Borrar libro">
+              <i class="fa fa-trash"></i>
+            </button>
+            <button type="button" class="btn btn-warning pull-right" (click)="goBack()" title="Atrás">
+              <i class="fa fa-arrow-left"></i>
+            </button>
+          </h2>
+        </div>
+        <div class="panel-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group col-xs-10">
+                  <label class="control-label col-sm-2" for="nombre">Título</label>
+                  <input [(ngModel)]="autor['nombre']" type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombreAutorForm">
+                </div>
+              </div>
+            </div>
+            <br>
+            <hr>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group col-xs-10">
+                  <label class="control-label col-sm-6" for="imagen_file">Foto del autor</label>
+                  <input (change)="imagePathChange()" type="file" class="form-control" placeholder="Ruta de la foto" id="imagen_file" name="fotoAutorForm">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group col-xs-10">
+                  <img src="http://localhost:8000/uploads/images/books/origen-dan-brown.png" alt="{{autor['nombre']}}" style="display:block;width:100px;height:auto;border:0;">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="panel-footer">
+          <button *ngIf="autorId['id'] === 'new'? true : false" type="button" class="btn btn-success pull-right" (click)="postAPIAutorInfo()">Save changesPost</button>
+          <button *ngIf="autorId['id'] === 'new'? false : true" type="button" class="btn btn-success pull-right" (click)="putAPIAutorInfo()">Save changesPut</button>
+          <div class="clearfix">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 
 class ciudadesController extends Controller
 {
+    public function index()
+    {
+        return paises::all();
+    }
+
     public function show($id)
     {
         return ciudades::find($id);

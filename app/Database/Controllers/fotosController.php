@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 
 class fotosController extends Controller
 {
+    public function index()
+    {
+        return fotos::all();
+    }
+
     public function show($id)
     {
         return fotos::find($id);

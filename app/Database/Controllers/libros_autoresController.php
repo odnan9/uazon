@@ -8,9 +8,14 @@ use App\Http\Controllers\Controller;
 
 class libros_autoresController extends Controller
 {
+    public function index()
+    {
+        return libros_autores::all();
+    }
+
     public function show($id)
     {
-        return libros_autores::find($id);
+        return libros_autores::where('fk_libros', $id);
     }
 
     public function store(Request $request)

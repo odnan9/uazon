@@ -3,14 +3,20 @@
 namespace App\Database\Controllers;
 
 use App\Database\comentarios;
+use App\Database\libros;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class comentariosController extends Controller
 {
     public function index()
     {
-        return comentarios::all();
+        return DB::table('comentarios')
+            ->join('libros','comentarios.fk_libros', '=', 'libros.libros_id')
+            ->select('comentarios.*','libros.titulo')
+            ->orderBy('comentarios.comentarios_id')
+            ->get();
     }
 
     public function show($id)
