@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::get('user/{id}', '\App\Database\Controllers\usersController@show');
 /*
  * autores table api routes
  */

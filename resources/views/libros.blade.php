@@ -18,7 +18,7 @@
                         </tr>
                         @foreach ($listadoLibros as $libro)
                             <tr>
-                                <td><a href="{{route('libro', [$libro->libros_id])}}">{{ $libro->titulo }}</a></td>
+                                <td><a href="{{route('libros_get', [$libro->libros_id])}}">{{ $libro->titulo }}</a></td>
                                 <td>{{ $libro->editorial }}</td>
                                 <td>{{ $libro->precio }}</td>
                                 <td>{{ $libro->isbn }}</td>

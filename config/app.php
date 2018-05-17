@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Uazon'),
+    'logo' => env('APP_LOGO', 'public/assets/images/logo.png'),
 
     /*
     |--------------------------------------------------------------------------
@@ -173,10 +174,9 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class
     ],
 
     /*

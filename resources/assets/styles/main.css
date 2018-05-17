@@ -22,3 +22,10 @@
 @import "5_components/_main_header.css";
 @import "5_components/_main_footer.css";
 @import "6_trumps/_helpers.css";
+/*Icons*/
+@import "../../../node_modules/font-awesome/css/font-awesome.css";
+/*@import "../../../node_modules/bootstrap-material-design-icons/css/material-icons.css";*/
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+/*Fonts*/
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+

@@ -56,22 +56,18 @@ export class LibrosComponent implements OnInit {
   }
 
   getAPILibros() {
-    return this._apiService.prepareAPICall()
-    .subscribe(
-      data => {
-             this._apiService.setToken(data),
-             setTimeout(() => {
-               this._apiService.get('libros')
-               .subscribe(
-                 data => {
-                   this.libros = data,
-                   console.log(data)
-                 },
-                 err => console.error(err),
-                 () => console.log('Done loading libros data from API...')
-               );
-             }, 100);
-           },
-    );
+    if (localStorage.getItem('uazon_api_token')) {
+      setTimeout(() => {
+        this._apiService.get('libros')
+        .subscribe(
+          data => {
+            this.libros = data,
+              console.log(data)
+          },
+          err => console.error(err),
+          () => console.log('Done loading libros data from API...')
+        );
+      }, 100);
+    }
   }
 }

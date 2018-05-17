@@ -1,7 +1,9 @@
 <!-- Search widget -->
-<div class="col-md-4">
-    <form method="get" action="search.html">
-        <input type="text" name="search-text" placeholder="Buscar libro por título, auto, ISBN...">
-        <button type="submit">Enviar</button>
-    </form>
+<div class="col-md-4" style="text-align: right">
+  <form method="GET" action="/search">
+      <input type="text" name="search" class="form-control" placeholder="Buscar libro por título, auto, ISBN..." value="{{ old('search') }}">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </form>
 </div>

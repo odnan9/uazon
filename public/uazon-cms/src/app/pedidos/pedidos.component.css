@@ -1,0 +1,13 @@
+/*:host /deep/ .pedidosIdCustom {*/
+  /*align-content: center;*/
+  /*text-align: center;*/
+  /*align-content: center;*/
+  /*align-items: center;*/
+  /*align-self: center;*/
+  /*background: #0f0f0f;*/
+/*}*/
+
+:host /deep/ {
+  text-align: center;
+  /*background: #0f0f0f;*/
+}

@@ -18,7 +18,7 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 // Registration routes...
 Route::get('register', 'Auth\RegisterController@register');
-Route::post('register', 'Auth\RegisterController@register');
+Route::post('register', 'Auth\RegisterControl~ler@register');
 
 // Password Reset Routes...
 Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm');
@@ -37,14 +37,29 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/libros', 'librosController@index')->name('libros');
-Route::get('/libro/{$id}', 'libroController@index')->name('libro');
+Route::get('/libros', 'librosController@index')->name('libros_get');
+Route::get('/libro/{$id}', 'libroController@index')->name('libro_get');
 
-Route::get('/autores', 'autoresController@index')->name('autores');
-Route::get('/autor/{$id}', 'autorController@index')->name('autor');
+Route::get('/autores', 'autoresController@index')->name('autores_get');
+Route::get('/autor/{$id}', 'autorController@index')->name('autor_get');
 
-Route::get('/reviews', 'ReviewController@show')->name('reviews_get');
-Route::post('/form', 'ReviewController@store');
+Route::get('/lomasleido', 'lomasleidoController@show')->name('lomasleido_get');
+
+Route::get('/reviews', 'reviewController@show')->name('reviews_get');
+//Route::post('/form', 'reviewController@store');
+
+Route::get('/contacto', 'contactoController@show')->name('contacto_get');
+
+Route::get('/privacidad', 'privacidadController@show')->name('privacidad_get');
+
+Route::get('/avisolegal', 'avisolegalController@show')->name('avisolegal_get');
+
+Route::get('/sitemap', 'sitemapController@show')->name('sitemap_get');
+
+Route::get('/rss', 'rssController@show')->name('rss_get');
+
+Route::post('/search', 'HomeController@search')->name('search');
+Route::get('/search', 'HomeController@search')->name('search');
 
 Route::group(['middleware' => 'guest'], function() {});
 

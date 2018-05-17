@@ -27,6 +27,9 @@ import { ComentarioFichaComponent } from './comentarios/comentario.ficha/comenta
 import { ComentariosCustomRenderComponent } from './comentarios/comentarios-custom-render.component';
 import { ComentariosValidadoCustomRenderComponent } from './comentarios/comentarios-validado-custom-render.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { PedidosFichaComponent } from './pedidos/pedidos.ficha.component/pedidos.ficha.component.component';
+import { PedidosIdCustomRenderComponent } from './pedidos/pedidos-id-custom-render/pedidos-id-custom-render.component';
+import { PedidosUserCustomRenderComponent } from './pedidos/pedidos-user-custom-render/pedidos-user-custom-render.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 //
 // Services, guards and shared components
@@ -37,7 +40,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { ApiService } from './shared/services/api/api.service';
 import { AuthGuard } from "./guards/auth.guard";
 import { UserAccessService } from "./shared/services/useraccess.service";
-
+import { UsuariosFichaComponent } from './usuarios/usuarios-ficha/usuarios-ficha.component';
 
 const appRoutes: Routes = [
   {
@@ -86,6 +89,26 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'pedidos',
+    component: PedidosComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'pedidos/:id',
+    component: PedidosFichaComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'usuarios',
+    component: UsuariosComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'usuarios/:id',
+    component: UsuariosFichaComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: '',
     redirectTo: '/dashboard',
     pathMatch: 'full',
@@ -104,28 +127,34 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LibrosComponent,
-    AutoresComponent,
-    DashboardComponent,
-    PageNotFoundComponent,
-    LibrosCustomRenderComponent,
-    LibroFichaComponent,
-    AutorFichaComponent,
-    HeaderComponent,
     LoginComponent,
+    HeaderComponent,
+    LibrosComponent,
+    LibroFichaComponent,
+    LibrosCustomRenderComponent,
+    AutoresComponent,
+    AutorFichaComponent,
     AutoresCustomRenderComponent,
+    DashboardComponent,
     PedidosComponent,
+    PedidosFichaComponent,
     ComentariosComponent,
     ComentarioFichaComponent,
-    UsuariosComponent,
     ComentariosCustomRenderComponent,
-    ComentariosValidadoCustomRenderComponent
+    ComentariosValidadoCustomRenderComponent,
+    UsuariosComponent,
+    PageNotFoundComponent,
+    PedidosIdCustomRenderComponent,
+    PedidosUserCustomRenderComponent,
+    UsuariosFichaComponent,
   ],
   entryComponents: [
     LibrosCustomRenderComponent,
     AutoresCustomRenderComponent,
     ComentariosCustomRenderComponent,
-    ComentariosValidadoCustomRenderComponent
+    ComentariosValidadoCustomRenderComponent,
+    PedidosIdCustomRenderComponent,
+    PedidosUserCustomRenderComponent
   ],
   imports: [
     RouterModule.forRoot(

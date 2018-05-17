@@ -40,100 +40,80 @@ export class LibroFichaComponent implements OnInit {
   ngOnInit() { }
 
   getAPILibroInfo() {
-    return this._apiService.prepareAPICall()
-    .subscribe(
-      data => {
-        this._apiService.setToken(data),
-          setTimeout(() => {
-            this._apiService.get('libros/'+this.libroId['id'])
-            .subscribe(
-              data => {
-                this.libro = data[0],
-                  console.log(this.libro)
-              },
-              err => console.error(err),
-              () => console.log('Done loading libro '+ this.libroId['id'] +' data from API...')
-            );
-          }, 100);
-      },
-    );
+    if (localStorage.getItem('uazon_api_token')) {
+      setTimeout(() => {
+        this._apiService.get('libros/'+this.libroId['id'])
+        .subscribe(
+          data => {
+            this.libro = data[0],
+              console.log(this.libro)
+          },
+          err => console.error(err),
+          () => console.log('Done loading libro '+ this.libroId['id'] +' data from API...')
+        );
+      }, 100);
+    }
   }
 
   getAPIAutoresList() {
-    return this._apiService.prepareAPICall()
-    .subscribe(
-      data => {
-        this._apiService.setToken(data),
-          setTimeout(() => {
-            this._apiService.get('autores/')
-            .subscribe(
-              data => {
-                this.autores = data
-              },
-              err => console.error(err),
-              () => console.log('Done loading autores data from API...')
-            );
-          }, 100);
-      },
-    );
+    if (localStorage.getItem('uazon_api_token')) {
+      setTimeout(() => {
+        this._apiService.get('autores/')
+        .subscribe(
+          data => {
+            this.autores = data
+          },
+          err => console.error(err),
+          () => console.log('Done loading autores data from API...')
+        );
+      }, 100);
+    }
   }
 
 
   putAPILibroInfo() {
-    return this._apiService.prepareAPICall()
-    .subscribe(
-      data => {
-        this._apiService.setToken(data),
-          setTimeout(() => {
-            this._apiService.put('libros/'+this.libroId['id'],this.libro)
-            .subscribe(
-              data => {
-                return true;
-              },
-              err => console.error(err),
-              () => console.log('Done loading libro '+ this.libroId['id'] +' data from API...')
-            );
-          }, 100);
-      },
-    );
+    if (localStorage.getItem('uazon_api_token')) {
+      setTimeout(() => {
+        this._apiService.put('libros/'+this.libroId['id'],this.libro)
+        .subscribe(
+          data => {
+            return true;
+          },
+          err => console.error(err),
+          () => console.log('Done loading libro '+ this.libroId['id'] +' data from API...')
+        );
+      }, 100);
+    }
   }
 
   postAPILibroInfo() {
-    return this._apiService.prepareAPICall()
-    .subscribe(
-      data => {
-        this._apiService.setToken(data),
-          setTimeout(() => {
-            this._apiService.post('libros/',this.libro)
-            .subscribe(
-              data => {
-                return true;
-              },
-              err => console.error(err),
-              () => console.log('Done loading libro '+ this.libroId['id'] +' data from API...')
-            );
-          }, 100);
-      },
-    );
+    if (localStorage.getItem('uazon_api_token')) {
+      setTimeout(() => {
+        this._apiService.post('libros/',this.libro)
+        .subscribe(
+          data => {
+            return true;
+          },
+          err => console.error(err),
+          () => console.log('Done loading libro '+ this.libroId['id'] +' data from API...')
+        );
+      }, 100);
+    }
   }
 
   deleteAPILibroInfo() {
-    return this._apiService.prepareAPICall()
-    .subscribe(
-      data => {
-        this._apiService.setToken(data),
-          setTimeout(() => {
-            this._apiService.delete('libros/'+this.libroId['id'],this.libro)
-            .subscribe(
-              data => {
-                return true;
-              },
-              err => console.error(err),
-              () => console.log('Done deleting libro '+this.libroId['id']+' data from API...')
-            );
-          }, 100);
-      },
-    );
+    if (localStorage.getItem('uazon_api_token')) {
+      setTimeout(() => {
+        this._apiService.delete('libros/'+this.libroId['id'],this.libro)
+        .subscribe(
+          data => {
+            return true;
+          },
+          err => console.error(err),
+          () => console.log('Done deleting libro '+this.libroId['id']+' data from API...')
+        );
+      }, 100);
+    }
   }
 
   uploadImage() {

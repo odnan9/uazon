@@ -15,7 +15,8 @@ class librosController extends Controller
         return DB::table('libros_autores')
             ->join('libros','libros_autores.fk_libros', '=', 'libros.libros_id')
             ->join('autores', 'libros_autores.fk_autores', '=', 'autores.autores_id')
-            ->select('libros.*','autores.autores_id','autores.nombre as autor')
+            ->join('fotos', 'fotos.fk_libros', '=', 'libros.libros_id')
+            ->select('libros.*','autores.autores_id','autores.nombre as autor','fotos.path_foto','fotos.orden as orden_foto')
             ->orderBy('libros.libros_id')
             ->get();
     }
@@ -33,10 +34,7 @@ class librosController extends Controller
 
     public function store(Request $request)
     {
-        info($request->all());
         $libro = libros::create($request->all());
-        info($request['autores_id']);
-        info($libro['libros_id']);
         $libros_autores = libros_autores::create(['fk_autores' => $request['autores_id'], 'fk_libros' => $libro['libros_id'], 'fecha' => now()]);
         return response()->json($libro, 201);
     }

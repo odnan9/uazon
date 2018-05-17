@@ -5,6 +5,7 @@ namespace App\Database\Controllers;
 use App\Database\pedidos_libros;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class pedidos_librosController extends Controller
 {
@@ -15,7 +16,13 @@ class pedidos_librosController extends Controller
 
     public function show($id)
     {
-        return pedidos_libros::find($id);
+        return DB::table('pedidos_libros')
+            ->where('fk_pedidos', '=', $id)
+//            ->join('pedidos_libros','pedidos.pedidos_id', '=', 'pedidos_libros.fk_pedidos')
+            ->join('libros', 'pedidos_libros.fk_libros', '=', 'libros.libros_id')
+//            ->join('users', 'pedidos.fk_users', '=', 'users.id')
+            ->select('pedidos_libros.*','libros.*')
+            ->get();
     }
 
     public function store(Request $request)

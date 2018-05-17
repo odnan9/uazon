@@ -1,0 +1,129 @@
+<div class="col-md-10">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-info">Pedido #{{pedido['pedidos_id']}}
+            <!--<button type="button" class="btn btn-danger pull-right" (click)="deleteAPILibroInfo()" title="Borrar pedido">-->
+              <!--<i class="fa fa-trash"></i>-->
+            <!--</button>-->
+            <button type="button" class="btn btn-info pull-right" (click)="goBack()" title="Atrás">
+              <i class="fa fa-arrow-left"></i>
+            </button>
+          </h2>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-2">
+                  <span style="opacity: 0.5"><strong>Fecha</strong></span>
+                </div>
+                <div class="col-md-4">
+                  <span style="opacity: 0.5"><strong>Usuario</strong></span>
+                </div>
+                <div class="col-md-6">
+                  <span style="opacity: 0.5"><strong>Dirección de envio</strong></span>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-2">
+                  <span><strong>{{pedido['fecha']}}</strong></span>
+                </div>
+                <div class="col-md-4"><strong>
+                  <a [routerLink]="['/usuarios',pedido['fk_users']]" routerLinkActive="active">{{users['name']}}</a>
+                  <span><a href="mailto:{{users['email']}}">{{users['email']}}</a></span>
+                </strong></div>
+                <div class="col-md-6"><strong>
+                  <span>{{users['address']}}</span><br>
+                  <span>{{users['cp']}} - </span>
+                  <span>{{users['fk_ciudades']}}</span>
+                  <span>(país de {{users['fk_ciudades']}})</span>
+                </strong></div>
+              </div>
+            </div>
+            <div class="col-md-3"><strong>
+              <div *ngIf="pedido['estado'] === '0'" class="col-md-10 col-md-offset-2" style="background: rgba(40,130,200,0.5);text-align: right; font-size: 44px;">
+                <p style="text-align: center; font-size: 1em; padding: 10% 0% 0% 0%; margin: 0% 0% 0% 0%;">{{pedido['total']}} €</p>
+                <p style="text-align: right; font-size: 0.3em; padding: 0% 0% 0% 0%; margin: 0% 0% 0% 0%;">PENDIENTE</p>
+              </div>
+              <div *ngIf="pedido['estado'] === '1'" class="col-md-10 col-md-offset-2" style="background: rgba(8,11,200,0.5);text-align: right; font-size: 44px;">
+                <p style="text-align: center; font-size: 1em; padding: 10% 0% 0% 0%; margin: 0% 0% 0% 0%;">{{pedido['total']}}  €</p>
+                <p style="text-align: right; font-size: 0.3em; padding: 0% 0% 0% 0%; margin: 0% 0% 0% 0%;">PAGADO</p>
+              </div>
+              <div *ngIf="pedido['estado'] === '2'" class="col-md-10 col-md-offset-2" style="background: rgba(155,67,201,0.5);text-align: right; font-size: 44px;">
+                <p style="text-align: center; font-size: 1em; padding: 10% 0% 0% 0%; margin: 0% 0% 0% 0%;">{{pedido['total']}}  €</p>
+                <p style="text-align: right; font-size: 0.3em; padding: 0% 0% 0% 0%; margin: 0% 0% 0% 0%;">EN TRAMITE</p>
+              </div>
+              <div *ngIf="pedido['estado'] === '3'" class="col-md-10 col-md-offset-2" style="background: rgba(22,7,201,0.5);text-align: right; font-size: 44px;">
+                <p style="text-align: center; font-size: 1em; padding: 10% 0% 0% 0%; margin: 0% 0% 0% 0%;">{{pedido['total']}}  €</p>
+                <p style="text-align: right; font-size: 0.3em; padding: 0% 0% 0% 0%; margin: 0% 0% 0% 0%;">ENVIADO</p>
+              </div>
+              <div *ngIf="pedido['estado'] === '4'" class="col-md-10 col-md-offset-2" style="background: rgba(93,200,132,0.5);text-align: right; font-size: 44px;">
+                <p style="text-align: center; font-size: 1em; padding: 10% 0% 0% 0%; margin: 0% 0% 0% 0%;">{{pedido['total']}}  €</p>
+                <p style="text-align: right; font-size: 0.3em; padding: 0% 0% 0% 0%; margin: 0% 0% 0% 0%;">ENTREGADO</p>
+              </div>
+              <div *ngIf="pedido['estado'] === '5'" class="col-md-10 col-md-offset-2" style="background: rgba(201,98,89,0.5);text-align: right; font-size: 44px;">
+                <p style="text-align: center; font-size: 1em; padding: 10% 0% 0% 0%; margin: 0% 0% 0% 0%;">{{pedido['total']}}  €</p>
+                <p style="text-align: right; font-size: 0.3em; padding: 0% 0% 0% 0%; margin: 0% 0% 0% 0%;">ERROR</p>
+              </div>
+              <div *ngIf="pedido['estado'] === '6'" class="col-md-10 col-md-offset-2" style="background: rgba(201,98,89,0.5);text-align: right; font-size: 44px;">
+                <p style="text-align: center; font-size: 1em; padding: 10% 0% 0% 0%; margin: 0% 0% 0% 0%;">{{pedido['total']}}  €</p>
+                <p style="text-align: right; font-size: 0.3em; padding: 0% 0% 0% 0%; margin: 0% 0% 0% 0%;">CANCELADO</p>
+              </div>
+            </strong></div>
+          </div>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <span style="opacity: 0.6"><strong>Datos del pedido</strong></span>
+            </div>
+            <div class="col-md-12">
+              <div style="line-height: 2px; opacity: 0.4;" class="customHr">.</div>
+              <div class="row">
+                <div class="col-md-7">
+                  <span style="opacity: 0.4;font-size: 75%;"><strong>libros</strong></span>
+                </div>
+                <div class="col-md-2">
+                  <span style="opacity: 0.4;font-size: 75%;"><strong>cantidad</strong></span>
+                </div>
+                <div class="col-md-2">
+                  <span style="opacity: 0.4;font-size: 75%;"><strong>precio unitario</strong></span>
+                </div>
+                <div class="col-md-1">
+                  <span style="opacity: 0.4;font-size: 75%;"><strong>total</strong></span>
+                </div>
+              </div>
+              <div style="line-height: 2px; opacity: 0.4;" class="customHr">.</div>
+            </div>
+          </div>
+          <div  *ngFor="let orderline of pedidosLibros; let i = index">
+            <div class="row">
+              <div class="col-md-1">
+                  <img src="http://localhost:8000/assets/images/libros/6/origen-dan-brown.png" alt="{{orderline['titulo']}}" style="display:block;width:100px;height:auto;border:0;">
+              </div>
+              <div class="col-md-6">
+                <span><strong>{{orderline['titulo']}}</strong></span><br>
+                <div  *ngFor="let libro of libros; let j = index">
+                  <span *ngIf="orderline['fk_libros'] === libro['libros_id']">{{libro['autor']}}</span>
+                </div>
+
+                <span>{{orderline['editorial']}}</span><br><br>
+                <span style="opacity: 0.6;font-size: 75%;">isbn: {{orderline['isbn']}}</span><br>
+              </div>
+            </div>
+            <div style="line-height: 2px; opacity: 0.4;margin: 1% 0% 1% 0%" class="customHr">.</div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <button *ngIf="pedidoId['id'] === 'new'? true : false" type="button" class="btn btn-success pull-right" (click)="postAPILibroInfo()">Save changes</button>
+          <button *ngIf="pedidoId['id'] === 'new'? false : true" type="button" class="btn btn-success pull-right" (click)="putAPILibroInfo()">Save changes</button>
+          <div class="clearfix">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
