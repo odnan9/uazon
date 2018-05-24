@@ -11,18 +11,5 @@ export class AppComponent implements OnInit {
   public title = 'Uazon CMS';
   constructor(private _apiService: ApiService) { }
 
-  ngOnInit() {
-    this.getAPIComentarios();
-  }
-
-  getAPIComentarios() {
-    return this._apiService.prepareAPICall()
-    .subscribe(
-      data => {
-        this.test = data
-      },
-      err => console.error(err),
-      () => console.log('Token saved...')
-    );
-  }
+  ngOnInit() { }
 }

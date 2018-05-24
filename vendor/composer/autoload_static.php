@@ -108,6 +108,7 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'Gloudemans\\Shoppingcart\\' => 24,
         ),
         'F' => 
         array (
@@ -331,6 +332,10 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
+        'Gloudemans\\Shoppingcart\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gloudemans/shoppingcart/src',
+        ),
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
@@ -469,6 +474,7 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'App\\Database\\fotos' => __DIR__ . '/../..' . '/app/Database/fotos.php',
         'App\\Database\\libros' => __DIR__ . '/../..' . '/app/Database/libros.php',
         'App\\Database\\libros_autores' => __DIR__ . '/../..' . '/app/Database/libros_autores.php',
+        'App\\Database\\libros_todo' => __DIR__ . '/../..' . '/app/Database/libros_todo.php',
         'App\\Database\\paises' => __DIR__ . '/../..' . '/app/Database/paises.php',
         'App\\Database\\pedidos' => __DIR__ . '/../..' . '/app/Database/pedidos.php',
         'App\\Database\\pedidos_libros' => __DIR__ . '/../..' . '/app/Database/pedidos_libros.php',
@@ -486,6 +492,7 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'App\\Http\\Controllers\\criticasController' => __DIR__ . '/../..' . '/app/Http/Controllers/criticasController.php',
         'App\\Http\\Controllers\\libroController' => __DIR__ . '/../..' . '/app/Http/Controllers/libroController.php',
         'App\\Http\\Controllers\\librosController' => __DIR__ . '/../..' . '/app/Http/Controllers/librosController.php',
+        'App\\Http\\Controllers\\shoppingCartController' => __DIR__ . '/../..' . '/app/Http/Controllers/shoppingCartController.php',
         'App\\Http\\Controllers\\uploadController' => __DIR__ . '/../..' . '/app/Http/Controllers/uploadController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -1125,6 +1132,16 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
         'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
         'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
+        'Gloudemans\\Shoppingcart\\CanBeBought' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/CanBeBought.php',
+        'Gloudemans\\Shoppingcart\\Cart' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Cart.php',
+        'Gloudemans\\Shoppingcart\\CartItem' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/CartItem.php',
+        'Gloudemans\\Shoppingcart\\CartItemOptions' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/CartItemOptions.php',
+        'Gloudemans\\Shoppingcart\\Contracts\\Buyable' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Contracts/Buyable.php',
+        'Gloudemans\\Shoppingcart\\Exceptions\\CartAlreadyStoredException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Exceptions/CartAlreadyStoredException.php',
+        'Gloudemans\\Shoppingcart\\Exceptions\\InvalidRowIDException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Exceptions/InvalidRowIDException.php',
+        'Gloudemans\\Shoppingcart\\Exceptions\\UnknownModelException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Exceptions/UnknownModelException.php',
+        'Gloudemans\\Shoppingcart\\Facades\\Cart' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Facades/Cart.php',
+        'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/ShoppingcartServiceProvider.php',
         'GuzzleHttp\\Client' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Client.php',
         'GuzzleHttp\\ClientInterface' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/ClientInterface.php',
         'GuzzleHttp\\Cookie\\CookieJar' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Cookie/CookieJar.php',

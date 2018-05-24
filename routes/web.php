@@ -35,28 +35,28 @@ Route::get('/', function () {
 
 // Home route
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
 
-Route::get('/libros', 'librosController@index')->name('libros_get');
-Route::get('/libro/{$id}', 'libroController@index')->name('libro_get');
+Route::get('/libros', 'librosController@index')->name('libros');
+Route::get('/libro/{$id}', 'libroController@index')->name('libro');
 
-Route::get('/autores', 'autoresController@index')->name('autores_get');
-Route::get('/autor/{$id}', 'autorController@index')->name('autor_get');
+Route::get('/autores', 'autoresController@index')->name('autores');
+Route::get('/autor/{$id}', 'autorController@index')->name('autor');
 
-Route::get('/lomasleido', 'lomasleidoController@show')->name('lomasleido_get');
+Route::get('/lomasleido', 'lomasleidoController@show')->name('lomasleido');
 
-Route::get('/reviews', 'reviewController@show')->name('reviews_get');
+Route::get('/reviews', 'reviewController@show')->name('reviews');
 //Route::post('/form', 'reviewController@store');
 
-Route::get('/contacto', 'contactoController@show')->name('contacto_get');
+Route::get('/contacto', 'contactoController@show')->name('contacto');
 
-Route::get('/privacidad', 'privacidadController@show')->name('privacidad_get');
+Route::get('/privacidad', 'privacidadController@show')->name('privacidad');
 
-Route::get('/avisolegal', 'avisolegalController@show')->name('avisolegal_get');
+Route::get('/avisolegal', 'avisolegalController@show')->name('avisolegal');
 
-Route::get('/sitemap', 'sitemapController@show')->name('sitemap_get');
+Route::get('/sitemap', 'sitemapController@show')->name('sitemap');
 
-Route::get('/rss', 'rssController@show')->name('rss_get');
+Route::get('/rss', 'rssController@show')->name('rss');
 
 Route::post('/search', 'HomeController@search')->name('search');
 Route::get('/search', 'HomeController@search')->name('search');
@@ -64,3 +64,6 @@ Route::get('/search', 'HomeController@search')->name('search');
 Route::group(['middleware' => 'guest'], function() {});
 
 Route::group(['middleware' => 'auth'], function() {});
+
+Route::get('/cart', 'shoppingCartController@cart');
+Route::post('/cart', 'shoppingCartController@cart');

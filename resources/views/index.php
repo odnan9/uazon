@@ -36,13 +36,11 @@
     <meta property="og:image:type" content="image/jpg">
 
     <!-- Estilos base cargados directamente en main.css -->
-    <style type="text/css" rel="stylesheet">
-        <?php echo file_get_contents('./public/assets/styles/main.css') ?>
-    </style>
-
-    <!-- Estilos de las página review -->
-    <link type="text/css" rel="stylesheet" href="../../../public/assets/styles/review.css">
-
+<!--    <style type="text/css" rel="stylesheet">-->
+<!--        --><?php //echo file_get_contents('./public/assets/styles/main.css') ?>
+<!--        --><?php //echo file_get_contents('./public/assets/styles/review.css') ?>
+<!--        --><?php //echo file_get_contents('./public/assets/styles/third_party.css') ?>
+<!--    </style>-->
 </head>
 <body>
 

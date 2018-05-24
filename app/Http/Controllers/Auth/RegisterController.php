@@ -52,9 +52,6 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:48|unique:users',
             'password' => 'required|string|min:6|max:64|confirmed',
             'admin' => 'required|boolean',
-//            'address' => 'required|string|min:6|max:64',
-//            'cp' => 'required|string|min:3|max:16',
-//            'fk_ciudades' => 'required||unique:ciudades,id',
         ]);
     }
 
@@ -66,15 +63,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-//        info($data);
         return \App\Database\User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'admin' => intval($data['admin']),
-//            'address' => $data['address'],
-//            'cp' => $data['cp'],
-//            'fk_ciudades' => intval($data['fk_ciudades']),
         ]);
     }
 }

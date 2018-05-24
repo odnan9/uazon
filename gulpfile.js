@@ -1,18 +1,21 @@
 // All the plugins we need
 var gulp = require('gulp'),
-    browserSync = require('browser-sync').create(),
-    cssnano = require('gulp-cssnano'),
-    concat = require('gulp-concat'),
-    image = require('gulp-image'),
-    postcss = require('gulp-postcss'),
-    postcssCssnext = require('postcss-cssnext'),
-    postcssImport = require('postcss-import'),
-    postcssMixins = require('postcss-mixins'),
-    postcssNested = require('postcss-nested'),
-    postcssHexrgba = require('postcss-hexrgba'),
-    postcssPxToRem = require('postcss-pxtorem'),
-    runSequence = require('run-sequence'),
-    uglify = require('gulp-uglify');
+  browserSync = require('browser-sync').create(),
+  cssnano = require('gulp-cssnano'),
+  concat = require('gulp-concat'),
+  image = require('gulp-image'),
+  postcss = require('gulp-postcss'),
+  postcssCssnext = require('postcss-cssnext'),
+  postcssImport = require('postcss-import'),
+  postcssMixins = require('postcss-mixins'),
+  postcssNested = require('postcss-nested'),
+  postcssHexrgba = require('postcss-hexrgba'),
+  postcssPxToRem = require('postcss-pxtorem'),
+  runSequence = require('run-sequence'),
+  postcssCustomMedia = require('postcss-custom-media'),
+  uglify = require('gulp-uglify');
+  // TODO: Make gulp to create all image sizes.
+  // imageResize = require('gulp-image-resize'),
 
 // PxToRem Configuration
 var pxToRemConf = {
@@ -24,7 +27,6 @@ var pxToRemConf = {
 // Files configuration
 var publicAssets = 'public/assets',
     sourceAssets = 'resources/assets';
-
 
 // Default
 // --------------------------------------------------------------------------------------------
@@ -75,7 +77,7 @@ gulp.task('fonts', function() {
 // --------------------------------------------------------------------------------------------
 gulp.task('styles', function() {
    return   gulp.src(sourceAssets + '/styles/*.css')
-                .pipe(postcss([postcssImport, postcssMixins, postcssNested, postcssCssnext, postcssPxToRem(pxToRemConf), postcssHexrgba]))
+                .pipe(postcss([postcssImport, postcssMixins, postcssNested, postcssCustomMedia(), postcssCssnext, postcssPxToRem(pxToRemConf), postcssHexrgba]))
                 .pipe(cssnano())
                 .pipe(gulp.dest(publicAssets + '/styles'));
 });
@@ -90,7 +92,7 @@ gulp.task('images', function() {
 });
 
 
-// Javascript yar party
+// Javacript yar party
 // --------------------------------------------------------------------------------------------
 gulp.task('scripts-third', function() {
     return  gulp.src(['node_modules/jquery/dist/jquery.min.js'])

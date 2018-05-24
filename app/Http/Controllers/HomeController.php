@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Database\autores;
 use App\Database\libros;
+use Cart;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,11 @@ class HomeController extends Controller
 
   public function index()
   {
-    return view('home', ['seo_title'=>'UAZON - Reeders meet books.']);
+    $cart = Cart::content();
+    $listaLibros = libros::all();
+    $listaAutores = autores::all();
+    $listaNovedades = libros::orderBy('created_at', 'desc')->get();
+    return view('home', ['seo_title'=>'UAZON - Reeders meet books.','listaLibros' => $listaLibros,'listaAutores' => $listaAutores, 'listaNovedades' => $listaNovedades, 'cart' => $cart]);
   }
 
   public function search(Request $request) {

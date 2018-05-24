@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Database\libros;
 use Illuminate\Http\Request;
+
 
 class libroController extends Controller
 {
-    public function __construct()
-    {
+  public function __construct()
+  {
 //        $this->middleware('auth');
-    }
+  }
 
-    public function index()
-    {
-        return view('libro');
-    }
+  public function index()
+  {
+      return view('libro');
+  }
 }

@@ -17,4 +17,9 @@ class autores extends Model
       'autores.nombre' => 10,
     ]
   ];
+
+  public function libros()
+  {
+    return $this->belongsToMany('App\Database\libros');
+  }
 }

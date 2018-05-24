@@ -21,4 +21,9 @@ class libros extends Model
       'libros.isbn' => 8,
     ]
   ];
+
+  public function autores()
+  {
+    return $this->belongsToMany('App\Database\autores');
+  }
 }

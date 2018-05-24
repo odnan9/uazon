@@ -118,6 +118,10 @@ export class AutorFichaComponent implements OnInit {
     }
   }
 
+  imagePathChange() {
+    // TODO: Detect the change of image and re-load it.
+  }
+
   goBack() {
     this.location.back();
   }

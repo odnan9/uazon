@@ -1,7 +1,7 @@
 export const env = {
     production: true,
-    apiPath: "http://localhost:8000/api/",
-    oAuthURL: "http://localhost:8000/oauth/token",
+    apiPath: "http://www.prowebproject.com/api/",
+    oAuthURL: "http://www.prowebproject.com/oauth/token",
     postData: {
         grant_type: "password",
         client_id: 2,

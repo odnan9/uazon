@@ -116,6 +116,10 @@ export class LibroFichaComponent implements OnInit {
     }
   }
 
+  imagePathChange() {
+    // TODO: Detect the change of image and re-load it.
+  }
+
   uploadImage() {
     // TODO: Implement the upload of image of the cover for each book and/or author/
     // Laravel API is already implemented at .../uazon/app/Http/Controllers/uploadController.php

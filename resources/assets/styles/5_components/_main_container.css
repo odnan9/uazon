@@ -1,0 +1,166 @@
+.container__main {
+  top: 13em;
+  /*height: 500px;*/
+  /*overflow: auto;*/
+  padding-bottom: 10em;
+}
+
+/* ==========================================================================
+   novedades
+   ========================================================================== */
+
+.home__novedades {
+  /*padding-top: 1em;*/
+}
+
+.novedades__title {
+  padding-top: 1em;
+  padding-left: 9em;
+}
+
+.novedades__item {
+  position: relative;
+  /*width: 50%;*/
+}
+
+.novedades__carousel--customNextBtn {
+  padding-top: 1.5em;
+  width: 2em;
+}
+
+.novedades__carousel--customPrevBtn {
+  padding-top: 1.5em;
+  width: 2em;
+}
+
+.novedades__img {
+  width: auto !important;
+  float: left;
+  clear: both;
+  border-radius: 5px;
+  display: block;
+  opacity: 1;
+  height: auto;
+  transition: .4s ease;
+  backface-visibility: hidden;
+}
+
+.novedades__img--fade {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.novedades__item:hover .novedades__img {
+  opacity: 0.3;
+}
+
+.novedades__item:hover .novedades__img--fade {
+  opacity: 1;
+}
+
+.novedades__img--text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.novedades__titulo {
+
+}
+
+/* ==========================================================================
+   lo más leido
+   ========================================================================== */
+
+.lomas__titulo {
+  color: #3f5374;
+  padding-top: 1em;
+  /*padding-left: 9em;*/
+}
+
+.lomas__item {
+  position: relative;
+  /*width: 50%;*/
+}
+
+.lomas__carousel--customNextBtn {
+  padding-top: 1.5em;
+  width: 2em;
+}
+
+.lomas__carousel--customPrevBtn {
+  padding-top: 1.5em;
+  width: 2em;
+}
+
+.lomas__img {
+  width: auto !important;
+  float: left;
+  clear: both;
+  border-radius: 5px;
+  display: block;
+  opacity: 1;
+  height: auto;
+  transition: .4s ease;
+  backface-visibility: hidden;
+}
+
+.lomas__img--fade {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.lomas__item:hover .lomas__img {
+  opacity: 0.3;
+}
+
+.lomas__item:hover .lomas__img--fade {
+  opacity: 1;
+}
+
+.lomas__img--text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.lomas__titulo {
+
+}
+
+/* ==========================================================================
+   carousel
+   ========================================================================== */
+
+home__slider { }
+
+carousel__slider { }
+
+.carousel__slider--index {
+  padding-top: 4em;
+  z-index: 0;
+}
+
+.carousel__img {
+  width: auto;
+  /*float: left;*/
+  /*clear: both;*/
+  /*border-radius: 10px;*/
+  /*display: block;*/
+  /*opacity: 1;*/
+  height: 500px;
+  /*transition: .4s ease;*/
+  /*backface-visibility: hidden;*/
+}

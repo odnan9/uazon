@@ -51,7 +51,6 @@ const appRoutes: Routes = [
     path: 'logout',
     redirectTo: '/login',
     pathMatch: 'full',
-    // component: LoginComponent
   },
   {
     path: 'dashboard',
@@ -120,7 +119,8 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    component: PageNotFoundComponent
+    redirectTo: ''
+    // component: PageNotFoundComponent
   }
 ];
 

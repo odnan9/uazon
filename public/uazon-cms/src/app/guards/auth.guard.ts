@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
 import { UserAccessService } from "../shared/services/useraccess.service";
 import { Router } from '@angular/router';
 
@@ -12,14 +11,12 @@ export class AuthGuard implements CanActivate {
     this.LocalStorageService = localStorage;
   };
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if(localStorage.getItem('uazon_api_token')) {
-      return true;
-    }else{
-      this.route.navigate(["login"]);
+  canActivate(next: ActivatedRouteSnapshot,state: RouterStateSnapshot): boolean
+  {
+    if(!this.UserAccessService.isLoggedIn()) {
+      this.route.navigate(['/login'], { queryParams: { returnUrl: state.url }});
       return false;
     }
+    return true;
   }
 }

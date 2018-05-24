@@ -18,6 +18,10 @@ export class UserAccessService {
     this.LocalStorageService = localStorage;
   }
 
+  public isLoggedIn() {
+    return localStorage.getItem('uazon_token');
+  }
+
   public login(user, password) {
     return this.getToken(user, password)
     .do(data => {
@@ -29,9 +33,9 @@ export class UserAccessService {
     let postData = env.postData;
     postData['username'] = user;
     postData['password'] = password;
-    let test = this._http.post(env.oAuthURL, postData, this.getOptions())
+    let token = this._http.post(env.oAuthURL, postData, this.getOptions())
     .map(response => response);
-    return test;
+    return token;
   }
 
   public setToken(token) {

@@ -12,7 +12,7 @@
             </tr>
             @foreach ($listaAutores as $autor)
               <tr>
-                <td><a href="{{route('autor', [$autor])}}">{{ $autor->nombre }}</a></td>
+                <td><a href="{{route('autores', [$autor])}}">{{ $autor->nombre }}</a></td>
               </tr>
             @endforeach
           </table>

@@ -14,6 +14,6 @@ class autorController extends Controller
 
     public function index()
     {
-        return view('autor', ['seo_title'=>'Detalles del autor']);
+      return view('autor', ['seo_title'=>'Detalles del autor']);
     }
 }

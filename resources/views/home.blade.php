@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">Dashboard</div>
-            <div class="panel-body">
-              @if (session('status'))
-                <div class="alert alert-success">
-                  {{ session('status') }}
-                </div>
-              @endif
-              You are logged in!
-          </div>
-        </div>
-      </div>
+  <div class="container__main container">
+    <div class="home__slider row">
+      @include('common.carousel')
+    </div>
+    <div class="novedades__title row">
+      <h2>Novedades</h2>
+    </div>
+    <div class="home__novedades row">
+        @include('home.novedades',['novedades' => $listaNovedades, 'autores' => $listaAutores])
+    </div>
+    <div class="novedades__title row">
+      <h2>Lo más vendido</h2>
+    </div>
+    <div class="home__lomas row">
+      @include('home.lomas',['lomaslibros' => $listaNovedades, 'autores' => $listaAutores])
     </div>
   </div>
 @endsection

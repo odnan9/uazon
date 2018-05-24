@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Database\libros;
-use Illuminate\Http\Request;
+use App\Database\autores;
+use App\Database\libros_autores;
+use Cart;
 
 class librosController extends Controller
 {
@@ -14,7 +16,10 @@ class librosController extends Controller
 
     public function index()
     {
-        $listaLibros = libros::all();
-        return view('libros', ['seo_title'=>'Listado de libros','listadoLibros' => $listaLibros]);
+      $cart = Cart::content();
+      $listaLibros = libros::all();
+      $listaAutores = autores::all();
+      $listaLibrosAutores = libros_autores::all();
+      return view('libros', ['seo_title'=>'Listado de libros','listaLibros' => $listaLibros, 'listaAutores' => $listaAutores, 'listaLibrosAutores' => $listaLibrosAutores,'cart' => $cart]);
     }
 }

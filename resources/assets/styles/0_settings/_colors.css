@@ -8,20 +8,36 @@
 
 :root {
 
-    /* Palette
-       ========================================================================== */
-    --color-default: #2C5169;
-    --color-default--lighter: #CCD0D5;
-    --color-default--dark: #002E4D;
+  /* We will use the logo colours in different parts of the web
+    Azul: 0097ae - 007986
+    Verde: 83ba00 - 5e8000
+    Marrón: 871700 - 6d0f00
+    Rosa: 990073 - 8e0071
+    ========================================================================== */
 
-    /* Texts
-       ========================================================================== */
-    --color-text: var(--color-default);
-    --color-title: var(--color-default--dark);
+  /* Palette
+     ========================================================================== */
+  --color-default: #0097ae;
+  --color-default--lighter: white;
+  /*--color-default--lighter: #00Afc6;*/
+  --color-default--dark: #306186;
+  --color-blue-light: #0097ae;
+  --color-blue-dark: #007986;
+  --color-green-light: #83ba00;
+  --color-green-dark: #5e8000;
+  --color-brown-light: #871700;
+  --color-brown-dark: #6d0f00;
+  --color-pink-light: #990073;
+  --color-pink-dark: #8e0071;
 
-    /* Links
-       ========================================================================== */
-    --color-link: #26C688;
-    --color-link--hover: var(--color-default--dark);
+  /* Texts
+     ========================================================================== */
+  --color-text: var(--color-default);
+  --color-title: var(--color-default--dark);
+
+  /* Links
+     ========================================================================== */
+  --color-link: #007986;
+  --color-link--hover: var(--color-default--dark);
 
 }

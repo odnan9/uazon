@@ -1,0 +1,57 @@
+/* ==========================================================================
+   libros
+   ========================================================================== */
+
+.container_libros {
+  font-family: var(--font-family--title);
+  font-size: 30px;
+  letter-spacing: 1px;
+  position: relative;
+  width: 100%;
+  top: 2em;
+}
+
+.libros__row {
+  font-family: var(--font-family--title);
+  font-size: 22px;
+  letter-spacing: 1px;
+  background-color: white;
+  color: #3f5374;
+}
+
+.libros__item {
+  position: relative;
+  /*width: 50%;*/
+}
+
+.libros__img {
+  width: auto !important;
+  float: left;
+  clear: both;
+  border-radius: 5px;
+  display: block;
+  opacity: 1;
+  height: auto;
+  transition: .4s ease;
+  backface-visibility: hidden;
+}
+
+.libros__img--text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.libros__titulo span {
+  color: #3f5374;
+  font-size: 1.6em;
+  text-decoration: none;
+}
+
+.libros__masinfo a {
+  color: #3f5374;
+  font-size: 1.2em;
+  text-decoration: none;
+  bottom: 0;
+}
