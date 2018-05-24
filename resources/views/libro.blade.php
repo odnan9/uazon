@@ -1,22 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
-
-                    <div class="panel-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        You are logged in!
-                    </div>
-                </div>
-            </div>
+  <div class="container_libro container">
+    <div class="row">
+        <div class="col-md-12 libro__header--height">
+          <div class="libro__item">
+            <img class="libro__img" src="/assets/images/libros/{{$libro['libros_id']}}/{{$libro['libros_id']}}_x400.jpg">
+          </div>
+          <div class="libro__titulo">
+            <span>{{$libro['titulo']}}</span>
+          </div>
+          <div class="libro__autor">
+            <span>{{$autor}}</span>
+          </div>
         </div>
+      </div>
+    <div class="row">
+      <div class="col-md-12 libro__subheader--height">
+        <div class="libro__editorial">
+          <p>Editorial: {{$libro['editorial']}}</p>
+          <p>ISBN: {{$libro['isbn']}}</p>
+          <p>Páginas: {{$libro['n_pags']}}</p>
+        </div>
+      </div>
     </div>
+    <section class="libro__sinopsis">
+      {!! $libro['sinopsis'] !!}
+    </section>
+  </div>
 @endsection

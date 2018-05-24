@@ -15,7 +15,7 @@ class libros_autoresController extends Controller
 
     public function show($id)
     {
-        return libros_autores::where('fk_libros', $id)->select('fk_autores');
+        return libros_autores::where('libros_libros_id', $id)->select('autores_autores_id');
     }
 
     public function store(Request $request)

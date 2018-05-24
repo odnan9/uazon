@@ -26,14 +26,6 @@
         <div class="novedades__titulo">
           <strong>{{$novedad['titulo']}}</strong>
         </div>
-        <div class="novedades__titulo">
-          {{-- TODO: Borrar este código si no muestro el autor --}}
-          {{--<div class="novedades__autor" id="novedades__autor">--}}
-          {{--<script>--}}
-          {{--document.write("{{\App\Database\autores::find($novedad['libros_id'])['nombre']}}");--}}
-          {{--</script>--}}
-          {{--</div>--}}
-        </div>
       </div>
     @endforeach
   </div>

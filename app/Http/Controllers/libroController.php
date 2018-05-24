@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Database\libros;
+use App\Database\autores;
+use Cart;
 
 class libroController extends Controller
 {
@@ -12,8 +13,11 @@ class libroController extends Controller
 //        $this->middleware('auth');
   }
 
-  public function index()
+  public function index($id)
   {
-      return view('libro');
+    $cart = Cart::content();
+    $libro = libros::find($id);
+    $autor = libros::find($id)->autores()->pluck('nombre')[0];
+    return view('libro', ['seo_title'=>'Listado de libros','libro' => $libro, 'autor' => $autor, 'cart' => $cart]);
   }
 }

@@ -38,10 +38,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index');
 
 Route::get('/libros', 'librosController@index')->name('libros');
-Route::get('/libro/{$id}', 'libroController@index')->name('libro');
+Route::get('/libro/{id}', 'libroController@index')->name('libro');
 
 Route::get('/autores', 'autoresController@index')->name('autores');
-Route::get('/autor/{$id}', 'autorController@index')->name('autor');
+Route::get('/autor/{id}', 'autorController@index')->name('autor');
 
 Route::get('/lomasleido', 'lomasleidoController@show')->name('lomasleido');
 
@@ -61,9 +61,11 @@ Route::get('/rss', 'rssController@show')->name('rss');
 Route::post('/search', 'HomeController@search')->name('search');
 Route::get('/search', 'HomeController@search')->name('search');
 
-Route::group(['middleware' => 'guest'], function() {});
-
-Route::group(['middleware' => 'auth'], function() {});
-
 Route::get('/cart', 'shoppingCartController@cart');
 Route::post('/cart', 'shoppingCartController@cart');
+
+# Middleware groups
+Route::group(['middleware' => 'guest'], function() {});
+Route::group(['middleware' => 'auth'], function() {});
+
+

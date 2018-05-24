@@ -1,8 +1,8 @@
 
 <div class="col-md-12 carousel__slider--index">
   <div class="carousel__slider owl-carousel owl-theme">
-    @for ($i = 1; $i < 4; $i++)
-      <img class="carousel__img" src="assets/images/slider/slide{{ $i }}_500x.jpg">
+    @for ($i = 1; $i < 8; $i++)
+      <img class="carousel__img" src="/assets/images/slider/slide{{ $i }}_500x.jpg">
     @endfor
   </div>
 </div>

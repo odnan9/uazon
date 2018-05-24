@@ -13,8 +13,8 @@ class librosController extends Controller
     public function index()
     {
         return DB::table('libros_autores')
-            ->join('libros','libros_autores.fk_libros', '=', 'libros.libros_id')
-            ->join('autores', 'libros_autores.fk_autores', '=', 'autores.autores_id')
+            ->join('libros','libros_autores.libros_libros_id', '=', 'libros.libros_id')
+            ->join('autores', 'libros_autores.autores_autores_id', '=', 'autores.autores_id')
             ->join('fotos', 'fotos.fk_libros', '=', 'libros.libros_id')
             ->select('libros.*','autores.autores_id','autores.nombre as autor','fotos.path_foto','fotos.orden as orden_foto')
             ->orderBy('libros.libros_id')
@@ -25,9 +25,9 @@ class librosController extends Controller
     {
         return DB::table('libros_autores')
             ->where('libros_id', '=', $id)
-            ->join('libros','libros_autores.fk_libros', '=', 'libros.libros_id')
-            ->join('autores', 'libros_autores.fk_autores', '=', 'autores.autores_id')
-            ->join('fotos', 'libros_autores.fk_libros', '=', 'fotos.fk_libros')
+            ->join('libros','libros_autores.libros_libros_id', '=', 'libros.libros_id')
+            ->join('autores', 'libros_autores.autores_autores_id', '=', 'autores.autores_id')
+            ->join('fotos', 'libros_autores.libros_libros_id', '=', 'fotos.fk_libros')
             ->select('libros.*','autores.autores_id','autores.nombre as autor', 'fotos.fotos_id', 'fotos.orden as fotos_orden', 'fotos.path_foto')
             ->get();
     }
@@ -35,7 +35,7 @@ class librosController extends Controller
     public function store(Request $request)
     {
         $libro = libros::create($request->all());
-        $libros_autores = libros_autores::create(['fk_autores' => $request['autores_id'], 'fk_libros' => $libro['libros_id'], 'fecha' => now()]);
+        $libros_autores = libros_autores::create(['autores_autores_id' => $request['autores_id'], 'libros_libros_id' => $libro['libros_id'], 'fecha' => now()]);
         return response()->json($libro, 201);
     }
 
@@ -50,7 +50,7 @@ class librosController extends Controller
     {
         $libro = libros::find($id);
         $libro->delete();
-        $libro_autores = libros_autores::where('fk_libros',$id)->first();
+        $libro_autores = libros_autores::where('libros_libros_id',$id)->first();
         $libro_autores->delete();
         return response()->json(null, 204);
     }

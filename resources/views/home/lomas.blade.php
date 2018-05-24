@@ -26,12 +26,6 @@
         <div class="lomas__titulo">
           <strong>{{$lomaslibro['titulo']}}</strong>
         </div>
-        {{-- TODO: Borrar este código si no muestro el autor --}}
-        {{--<div class="lomas__autor" id="lomas__autor">--}}
-          {{--<script>--}}
-            {{--document.write("{{\App\Database\autores::find($lomaslibro['libros_id'])['nombre']}}");--}}
-          {{--</script>--}}
-        {{--</div>--}}
       </div>
     @endforeach
   </div>

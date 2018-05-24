@@ -9,6 +9,7 @@
   position: relative;
   width: 100%;
   top: 2em;
+  padding: 2em 0 8em 0;
 }
 
 .libros__row {
@@ -17,11 +18,11 @@
   letter-spacing: 1px;
   background-color: white;
   color: #3f5374;
+  padding: 1em 0 1em 0;
 }
 
 .libros__item {
   position: relative;
-  /*width: 50%;*/
 }
 
 .libros__img {
@@ -32,8 +33,13 @@
   display: block;
   opacity: 1;
   height: auto;
-  transition: .4s ease;
+  transition: .2s ease;
   backface-visibility: hidden;
+}
+
+.libros__img:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .libros__img--text {
@@ -43,15 +49,104 @@
   padding: 16px 32px;
 }
 
-.libros__titulo span {
+.libros__titulo a {
   color: #3f5374;
   font-size: 1.6em;
   text-decoration: none;
 }
 
-.libros__masinfo a {
+.libros__titulo a:hover {
+  color: #007986;
+  font-size: 1.6em;
+  text-decoration: underline;
+}
+
+.libros__autor a {
   color: #3f5374;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.libros__autor a:hover {
+  color: #7089bd;
+  text-decoration: underline;
+}
+
+.libros__editorial span {
+
+}
+
+.libros__masinfo a {
+  position: relative;
+  color: #3f5374;
+  font-size: 0.7em;
   text-decoration: none;
   bottom: 0;
+  left: 0;
+}
+
+/* ==========================================================================
+   libro
+   ========================================================================== */
+
+.container_libro {
+  font-family: var(--font-family--text);
+  font-size: 30px;
+  letter-spacing: 1px;
+  position: relative;
+  width: 100%;
+  top: 5em;
+  background-color: #3f5374;
+}
+
+.libro__header--height {
+  height: 8em;
+}
+
+.libro__subheader--height {
+  height: 5em;
+  background-color: #ffffff;
+}
+
+.libro__img {
+  position: absolute;
+  top: -3em;
+  left: 3em;
+  z-index: 10;
+}
+
+.libro__titulo span {
+  position: relative;
+  font-family: var(--font-family--title);
+  font-size: 2em;
+  letter-spacing: 1px;
+  color: #ffffff;
+  top: 0em;
+  left: 7em;
+  text-decoration: none;
+}
+
+.libro__autor span {
+  position: relative;
+  color: #ffffff;
+  left: 14em;
+  top: -1em;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.libro__editorial p {
+  /*color: #ffffff;*/
+  margin: 0;
+  position: relative;
+  color: #3f5374;
+  left: 23.3em;
+  top: 1em;
+  font-size: 0.6em;
+  text-decoration: none;
+}
+
+.libro__sinopsis {
+  position: relative;
+  color: #ffffff;
 }

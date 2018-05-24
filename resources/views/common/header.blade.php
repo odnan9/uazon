@@ -4,7 +4,7 @@
     <!-- Logo -->
     <div class="zlogo col-md-2 offset-2">
       <a href="{{ route('home') }}">
-        <img class="logo__img--height" align="right" src="assets/images/logo500x.png">
+        <img class="logo__img--height" align="right" src="/assets/images/logo500x.png">
       </a>
     </div>
     <!-- Search Widget -->

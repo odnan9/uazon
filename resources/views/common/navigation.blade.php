@@ -1,19 +1,19 @@
 <!-- Main navigation -->
 <div class="row">
   <div class="col-md-1 offset-3 navigation__div--click">
-    <a class="navigation__item " href="{{ route('libros') }}">los libros</a>
+    <a class="navigation__item " href="{{ route('libros') }}">Libros</a>
   </div>
   <div class="col-md-1 navigation__div--click">
-    <a class="navigation__item" href="{{ route('autores') }}">los autores</a>
+    <a class="navigation__item" href="{{ route('autores') }}">Autores</a>
   </div>
   <div class="col-md-1 navigation__div--click">
-    <a class="navigation__item" href="{{ route('lomasleido') }}">lo más leído</a>
+    <a class="navigation__item" href="{{ route('lomasleido') }}">Lo más leído</a>
   </div>
   <div class="col-md-1 navigation__div--click">
-    <a class="navigation__item" href="{{ route('reviews') }}">nuestras críticas</a>
+    <a class="navigation__item" href="{{ route('reviews') }}">Críticas</a>
   </div>
   <div class="col-md-1 navigation__div--click">
-    <a class="navigation__item" href="{{ route('contacto') }}">contáctanos</a>
+    <a class="navigation__item" href="{{ route('contacto') }}">Contacto</a>
   </div>
   <div class="col-md-1 navigation__div--click">
     <a class="navigation__item" href="{{ route('contacto') }}">FAQ</a>
