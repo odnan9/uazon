@@ -15,7 +15,7 @@
       <h2>Lo más vendido</h2>
     </div>
     <div class="home__lomas row">
-      @include('home.lomas',['lomaslibros' => $listaNovedades, 'autores' => $listaAutores])
+      @include('home.lomas',['lomaslibros' => $listaPedidos, 'autores' => $listaAutores])
     </div>
   </div>
 @endsection

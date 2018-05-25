@@ -18,9 +18,7 @@ class pedidos_librosController extends Controller
     {
         return DB::table('pedidos_libros')
             ->where('fk_pedidos', '=', $id)
-//            ->join('pedidos_libros','pedidos.pedidos_id', '=', 'pedidos_libros.fk_pedidos')
             ->join('libros', 'pedidos_libros.fk_libros', '=', 'libros.libros_id')
-//            ->join('users', 'pedidos.fk_users', '=', 'users.id')
             ->select('pedidos_libros.*','libros.*')
             ->get();
     }

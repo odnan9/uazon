@@ -7,24 +7,24 @@
   <div class="carousel__lomas owl-carousel owl-theme">
     @foreach($lomaslibros as $lomaslibro)
       <div class="item lomas__item">
-        <img class="lomas__img" src="assets/images/libros/{{$lomaslibro['libros_id']}}/{{$lomaslibro['libros_id']}}_x300.jpg">
+        <img class="lomas__img" src="assets/images/libros/{{$lomaslibro->libros_id}}/{{$lomaslibro->libros_id}}_x300.jpg">
         <div class="lomas__img--fade">
           <div class="overlay-content">
-            <h3 class="top">{{$lomaslibro['titulo']}}</h3>
+            <h3 class="top">{{$lomaslibro->titulo}}</h3>
             <form method="POST" action="{{url('cart')}}">
-              <input type="hidden" name="libros_id" value="{{$lomaslibro['libros_id']}}">
+              <input type="hidden" name="libros_id" value="{{$lomaslibro->libros_id}}">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <button type="submit" class="lomas__btn">
                 <i class="fa fa-shopping-cart" style="color: #990073"></i>
                   <strong>
-                    {{$lomaslibro['precio']}} €
+                    {{$lomaslibro->precio}} €
                   </strong>
               </button>
             </form>
           </div>
         </div>
         <div class="lomas__titulo">
-          <strong>{{$lomaslibro['titulo']}}</strong>
+          <strong>{{$lomaslibro->titulo}}</strong>
         </div>
       </div>
     @endforeach
