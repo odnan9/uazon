@@ -17,13 +17,14 @@
 @import "3_base/_elements.css";
 @import "4_objects/_grid.css";
 @import "5_components/_buttons.css";
-@import "5_components/_panels.css";
-@import "5_components/_navbars.css";
+/*@import "5_components/_panels.css";*/
+/*@import "5_components/_navbars.css";*/
 @import "5_components/_main_container.css";
 @import "5_components/_main_header.css";
 @import "5_components/_main_footer.css";
 @import "5_components/_sitemap.css";
 @import "5_components/libros/_libros.css";
+@import "5_components/_cart.css";
 @import "6_trumps/_helpers.css";
 /*Icons*/
 @import "../../../node_modules/font-awesome/css/font-awesome.css";

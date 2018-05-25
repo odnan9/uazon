@@ -57,7 +57,7 @@ Route::get('/avisolegal', 'avisolegalController@index')->name('avisolegal');
 
 Route::get('/sitemap', 'sitemapController@index')->name('sitemap');
 
-Route::get('/rss', 'rssController@show')->name('rss');
+Route::get('/rss', 'rssController@index')->name('rss');
 
 Route::post('/search', 'HomeController@search')->name('search');
 Route::get('/search', 'HomeController@search')->name('search');
