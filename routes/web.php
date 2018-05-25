@@ -43,18 +43,19 @@ Route::get('/libro/{id}', 'libroController@index')->name('libro');
 Route::get('/autores', 'autoresController@index')->name('autores');
 Route::get('/autor/{id}', 'autorController@index')->name('autor');
 
-Route::get('/lomasleido', 'lomasleidoController@show')->name('lomasleido');
+Route::get('/lomasleido', 'lomasleidoController@index')->name('lomasleido');
 
-Route::get('/reviews', 'reviewController@show')->name('reviews');
+Route::get('/reviews', 'reviewsController@index')->name('reviews');
+Route::get('/review/{id}', 'reviewsController@show')->name('review');
 //Route::post('/form', 'reviewController@store');
 
-Route::get('/contacto', 'contactoController@show')->name('contacto');
+Route::get('/contacto', 'contactoController@index')->name('contacto');
 
-Route::get('/privacidad', 'privacidadController@show')->name('privacidad');
+Route::get('/privacidad', 'privacidadController@index')->name('privacidad');
 
-Route::get('/avisolegal', 'avisolegalController@show')->name('avisolegal');
+Route::get('/avisolegal', 'avisolegalController@index')->name('avisolegal');
 
-Route::get('/sitemap', 'sitemapController@show')->name('sitemap');
+Route::get('/sitemap', 'sitemapController@index')->name('sitemap');
 
 Route::get('/rss', 'rssController@show')->name('rss');
 
@@ -67,5 +68,6 @@ Route::post('/cart', 'shoppingCartController@cart');
 # Middleware groups
 Route::group(['middleware' => 'guest'], function() {});
 Route::group(['middleware' => 'auth'], function() {});
+
 
 

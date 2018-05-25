@@ -4,13 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
+class ComposerStaticInit5d118c55c4bd37f9083bfefcdd9903bd
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -52,6 +53,7 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
             'Symfony\\Thanks\\' => 15,
             'Symfony\\Polyfill\\Php70\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Routing\\' => 26,
@@ -191,6 +193,10 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'Symfony\\Component\\VarDumper\\' => 
         array (
@@ -478,21 +484,25 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'App\\Database\\paises' => __DIR__ . '/../..' . '/app/Database/paises.php',
         'App\\Database\\pedidos' => __DIR__ . '/../..' . '/app/Database/pedidos.php',
         'App\\Database\\pedidos_libros' => __DIR__ . '/../..' . '/app/Database/pedidos_libros.php',
+        'App\\Database\\pedidos_por_libro' => __DIR__ . '/../..' . '/app/Database/pedidos_por_libro.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Database\\Controllers\\pedidos_por_libroController' => __DIR__ . '/../..' . '/app/Database/Controllers/pedidos_por_libroController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\ReviewController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReviewController.php',
         'App\\Http\\Controllers\\autorController' => __DIR__ . '/../..' . '/app/Http/Controllers/autorController.php',
         'App\\Http\\Controllers\\autoresController' => __DIR__ . '/../..' . '/app/Http/Controllers/autoresController.php',
         'App\\Http\\Controllers\\criticaController' => __DIR__ . '/../..' . '/app/Http/Controllers/criticaController.php',
         'App\\Http\\Controllers\\criticasController' => __DIR__ . '/../..' . '/app/Http/Controllers/criticasController.php',
         'App\\Http\\Controllers\\libroController' => __DIR__ . '/../..' . '/app/Http/Controllers/libroController.php',
         'App\\Http\\Controllers\\librosController' => __DIR__ . '/../..' . '/app/Http/Controllers/librosController.php',
+        'App\\Http\\Controllers\\lomasleidoController' => __DIR__ . '/../..' . '/app/Http/Controllers/lomasleidoController.php',
+        'App\\Http\\Controllers\\reviewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/reviewsController.php',
         'App\\Http\\Controllers\\shoppingCartController' => __DIR__ . '/../..' . '/app/Http/Controllers/shoppingCartController.php',
+        'App\\Http\\Controllers\\sitemapController' => __DIR__ . '/../..' . '/app/Http/Controllers/sitemapController.php',
         'App\\Http\\Controllers\\uploadController' => __DIR__ . '/../..' . '/app/Http/Controllers/uploadController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -552,6 +562,7 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'Barryvdh\\Reflection\\DocBlock\\Type\\Collection' => __DIR__ . '/..' . '/barryvdh/reflection-docblock/src/Barryvdh/Reflection/DocBlock/Type/Collection.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
+        'Carbon\\CarbonPeriod' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonPeriod.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
@@ -3232,6 +3243,7 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'Psy\\CodeCleaner\\InstanceOfPass' => __DIR__ . '/..' . '/psy/psysh/src/CodeCleaner/InstanceOfPass.php',
         'Psy\\CodeCleaner\\LeavePsyshAlonePass' => __DIR__ . '/..' . '/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php',
         'Psy\\CodeCleaner\\LegacyEmptyPass' => __DIR__ . '/..' . '/psy/psysh/src/CodeCleaner/LegacyEmptyPass.php',
+        'Psy\\CodeCleaner\\ListPass' => __DIR__ . '/..' . '/psy/psysh/src/CodeCleaner/ListPass.php',
         'Psy\\CodeCleaner\\LoopContextPass' => __DIR__ . '/..' . '/psy/psysh/src/CodeCleaner/LoopContextPass.php',
         'Psy\\CodeCleaner\\MagicConstantsPass' => __DIR__ . '/..' . '/psy/psysh/src/CodeCleaner/MagicConstantsPass.php',
         'Psy\\CodeCleaner\\NamespaceAwarePass' => __DIR__ . '/..' . '/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php',
@@ -3276,7 +3288,6 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'Psy\\Command\\TraceCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/TraceCommand.php',
         'Psy\\Command\\WhereamiCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/WhereamiCommand.php',
         'Psy\\Command\\WtfCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/WtfCommand.php',
-        'Psy\\Compiler' => __DIR__ . '/..' . '/psy/psysh/src/Compiler.php',
         'Psy\\ConfigPaths' => __DIR__ . '/..' . '/psy/psysh/src/ConfigPaths.php',
         'Psy\\Configuration' => __DIR__ . '/..' . '/psy/psysh/src/Configuration.php',
         'Psy\\ConsoleColorFactory' => __DIR__ . '/..' . '/psy/psysh/src/ConsoleColorFactory.php',
@@ -3293,6 +3304,7 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'Psy\\Exception\\TypeErrorException' => __DIR__ . '/..' . '/psy/psysh/src/Exception/TypeErrorException.php',
         'Psy\\ExecutionClosure' => __DIR__ . '/..' . '/psy/psysh/src/ExecutionClosure.php',
         'Psy\\ExecutionLoop' => __DIR__ . '/..' . '/psy/psysh/src/ExecutionLoop.php',
+        'Psy\\ExecutionLoopClosure' => __DIR__ . '/..' . '/psy/psysh/src/ExecutionLoopClosure.php',
         'Psy\\ExecutionLoop\\AbstractListener' => __DIR__ . '/..' . '/psy/psysh/src/ExecutionLoop/AbstractListener.php',
         'Psy\\ExecutionLoop\\Listener' => __DIR__ . '/..' . '/psy/psysh/src/ExecutionLoop/Listener.php',
         'Psy\\ExecutionLoop\\ProcessForker' => __DIR__ . '/..' . '/psy/psysh/src/ExecutionLoop/ProcessForker.php',
@@ -4087,6 +4099,7 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
         'Symfony\\Component\\VarDumper\\Exception\\ThrowingCasterException' => __DIR__ . '/..' . '/symfony/var-dumper/Exception/ThrowingCasterException.php',
         'Symfony\\Component\\VarDumper\\Test\\VarDumperTestTrait' => __DIR__ . '/..' . '/symfony/var-dumper/Test/VarDumperTestTrait.php',
         'Symfony\\Component\\VarDumper\\VarDumper' => __DIR__ . '/..' . '/symfony/var-dumper/VarDumper.php',
+        'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
         'Symfony\\Polyfill\\Php70\\Php70' => __DIR__ . '/..' . '/symfony/polyfill-php70/Php70.php',
         'Symfony\\Thanks\\Command\\ThanksCommand' => __DIR__ . '/..' . '/symfony/thanks/src/Command/ThanksCommand.php',
@@ -4265,11 +4278,11 @@ class ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit8be38abf9bbc84b3eff222afbe05cfa2::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5d118c55c4bd37f9083bfefcdd9903bd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5d118c55c4bd37f9083bfefcdd9903bd::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit5d118c55c4bd37f9083bfefcdd9903bd::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit5d118c55c4bd37f9083bfefcdd9903bd::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit5d118c55c4bd37f9083bfefcdd9903bd::$classMap;
 
         }, null, ClassLoader::class);
     }

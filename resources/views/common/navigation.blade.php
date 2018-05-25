@@ -15,9 +15,6 @@
   <div class="col-md-1 navigation__div--click">
     <a class="navigation__item" href="{{ route('contacto') }}">Contacto</a>
   </div>
-  <div class="col-md-1 navigation__div--click">
-    <a class="navigation__item" href="{{ route('contacto') }}">FAQ</a>
-  </div>
 </div>
 
 <script>

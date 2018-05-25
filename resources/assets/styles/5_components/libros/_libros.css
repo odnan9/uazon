@@ -29,7 +29,7 @@
   width: auto !important;
   float: left;
   clear: both;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   display: block;
   opacity: 1;
   height: auto;
@@ -96,14 +96,14 @@
   position: relative;
   width: 100%;
   top: 5em;
-  background-color: #3f5374;
 }
 
-.libro__header--height {
+.libro__header {
+  background-color: #3f5374;
   height: 8em;
 }
 
-.libro__subheader--height {
+.libro__subheader {
   height: 5em;
   background-color: #ffffff;
 }
@@ -146,7 +146,8 @@
   text-decoration: none;
 }
 
-.libro__sinopsis {
+.libro__sinopsis span {
   position: relative;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #3f5374;
 }
