@@ -25,6 +25,7 @@
 @import "5_components/_sitemap.css";
 @import "5_components/libros/_libros.css";
 @import "5_components/_cart.css";
+@import "5_components/_autores.css";
 @import "6_trumps/_helpers.css";
 /*Icons*/
 @import "../../../node_modules/font-awesome/css/font-awesome.css";

@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
+  <div class="container__autores">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">Listado de libros</div>
-          <table>
+      <div class="col-md-6 offset-3">
+        <div class="autores__titulo">
+          <div class="">Listado de autores</div>
+          <table class="autores__table">
             <tr>
               <th>Nombre del autor</th>
             </tr>

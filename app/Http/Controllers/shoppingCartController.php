@@ -6,15 +6,27 @@ use Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Database\libros;
 use Cart;
+use Session;
+use Auth;
 
 class shoppingCartController extends Controller
 {
   public function cart() {
+    $user_id = Session::getId();
+    Cart::restore($user_id);
+    if (!Auth::guest()) {
+      $user_id = Auth::getUser()['email'];
+      Cart::restore($user_id);
+    }
+
     if (Request::isMethod('post')) {
       $libros_id = Request::get('libros_id');
-      $libros = new libros();
-      $libro = $libros->find($libros_id);
+      $libro = libros::find($libros_id);
       Cart::add(array('id' => $libros_id, 'name' => $libro['titulo'], 'qty' => 1, 'price' => $libro['precio']));
+      Cart::store($user_id);
+
+      $cart = Cart::content();
+      return $cart;
     }
 
     if (Request::get('libros_id') && (Request::get('increment')) == 1) {
@@ -29,6 +41,9 @@ class shoppingCartController extends Controller
       $item = $rowId->first();
 
       Cart::update($item->rowId, $item->qty - 1);
+      if (Cart::count() == 0) {
+        Cart::destroy();
+      }
     }
 
     if (Request::get('libros_id') && (Request::get('remove')) == 1) {
@@ -36,14 +51,20 @@ class shoppingCartController extends Controller
       $item = $rowId->first();
 
       Cart::remove($item->rowId);
+      if (Cart::count() == 0) {
+        Cart::destroy();
+      }
     }
 
     if (Request::get('destroy') == 1) {
       Cart::destroy();
     }
 
+    info($user_id);
+    info(Cart::content());
     if (Cart::count() > 0) {
       $cart = Cart::content();
+      Cart::store($user_id);
       return view('cart', array('cart' => $cart, 'title' => 'Welcome', 'description' => '', 'page' => 'home'));
     } else {
       return \redirect('home');

@@ -1,12 +1,16 @@
 <!-- Authentication Links -->
 <div class="shoppingcart__dropdown shoppingcart__dropdown--open">
   <a class="shoppingcart__dropdown--toggle" data-toggle="shoppingcart__dropdown" href="#">
-    <i class="fa fa-shopping-cart"></i>
+    <span class="fa-layers fa-fw">
+      <i class="fa fa-shopping-cart"></i>
+      <span class="fa fa-layers-counter"><?php Cart::count() ?></span>
+    </span>
       Carrito
     <i class="fa fa-angle-down flechadespliegue"></i>
   </a>
   <div class="shoppingcart__dropdown-menu">
     <form method="GET" action="{{url('cart')}}">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <fieldset class="shoppingcart__fieldset--border">
         @if(count($cart))
         <span class="shoppingcart__header">Libros en carrito</span>

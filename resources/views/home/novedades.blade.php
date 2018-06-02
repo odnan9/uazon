@@ -4,14 +4,15 @@
   </a>
 </div>
 <div class="col-md-10 owl-carousel__index">
-  <div class="carusel__novedades owl-carousel owl-theme">
+  <div id="carusel__novedades" class="carusel__novedades owl-carousel owl-theme">
     @foreach($novedades as $novedad)
       <div class="item novedades__item">
         <img class="novedades__img" src="assets/images/libros/{{$novedad['libros_id']}}/{{$novedad['libros_id']}}_x300.jpg">
         <div class="novedades__img--fade">
           <div class="overlay-content">
             <h3 class="top">{{$novedad['titulo']}}</h3>
-            <form method="POST" action="{{url('cart')}}">
+            {{--<form method="POST" action="{{url('cart')}}">--}}
+            <form id="novedadesCartForm{{$novedad['libros_id']}}" action="{{url('cart')}}">
               <input type="hidden" name="libros_id" value="{{$novedad['libros_id']}}">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <button type="submit" class="lomas__btn">
@@ -61,5 +62,22 @@
   });
   $('.novedades__carousel--customPrevBtn').click(function() {
     owlNovedades.trigger('prev.owl.carousel', [500]);
+  });
+
+  $(document).ready(function () {
+    $('#carusel__novedades form').each(function() {
+      $(this).submit(function (event) {
+        event.preventDefault();
+        var libros_id = $(this).find("input[name='libros_id']").val();
+        var _token = $(this).find("input[name='_token']").val();
+        url = $(this).attr("action");
+        var posting = $.post( url, {libros_id: libros_id, _token: _token} );
+        posting.done(function( data ) {
+          console.log(data);
+          var content = $( data ).find( "#content" );
+          $( "#result" ).empty().append( content );
+        });
+      });
+    });
   });
 </script>

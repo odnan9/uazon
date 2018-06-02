@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container_libros container">
+  <div id="container_lomasleido" class="container_libros container">
     @foreach ($listaPedidos as $key => $libro)
       @if (!($key % 2))
         <div class="libros__row row">
@@ -26,7 +26,7 @@
               {{ $libro->editorial }}
             </span>
             </div>
-            <form method="POST" action="{{url('cart')}}">
+            <form id="lomasleidoCartForm{{$libro->libros_id}}" action="{{url('cart')}}">
               <input type="hidden" name="libros_id" value="{{$libro->libros_id}}">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <button type="submit" class="lomas__btn">
@@ -46,4 +46,23 @@
       @endif
     @endforeach
   </div>
+
+  <script>
+    $(document).ready(function () {
+      $('#container_lomasleido form').each(function() {
+        $(this).submit(function (event) {
+          event.preventDefault();
+          var libros_id = $(this).find("input[name='libros_id']").val();
+          var _token = $(this).find("input[name='_token']").val();
+          url = $(this).attr("action");
+          var posting = $.post( url, {libros_id: libros_id, _token: _token} );
+          posting.done(function( data ) {
+            console.log(data);
+            var content = $( data ).find( "#content" );
+            $( "#result" ).empty().append( content );
+          });
+        });
+      });
+    });
+  </script>
 @endsection

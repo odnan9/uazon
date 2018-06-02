@@ -1,0 +1,23 @@
+.container__autores {
+  top: 20em;
+  padding-bottom: 10em;
+}
+
+/* ==========================================================================
+   novedades
+   ========================================================================== */
+
+.autores__titulo {
+  color: #3f5374;
+  padding-top: 3em;
+}
+
+.autores__item {
+  color: #3f5374;
+  position: relative;
+}
+
+.autores__table {
+  background-color: #ffffff;
+  color: #3f5374;
+}
