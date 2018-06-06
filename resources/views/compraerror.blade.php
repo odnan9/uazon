@@ -2,24 +2,11 @@
 
 @section('content')
   {{ csrf_field() }}
-
-  @if(Request::get('receiver_email'))
-
-  @endif
-  {{----}}
-{{--// ES UN PAGO DE PAYPAL--}}
-{{--if(isset($_POST["receiver_email"]))--}}
-{{--{--}}
-  {{--$cliente = $_POST["custom"];--}}
-  {{--$idPedido = $_POST["item_number"];--}}
-
-  {{--echo "<br> El pago del pedido :".$idPedido;--}}
-  {{--echo "<br> por el cliente con id :".$cliente;--}}
-  {{--echo "<br> NO SE HA REALIZADO ";--}}
-{{--}--}}
-{{--else--}}
-{{--{--}}
-  {{--echo "<br> Ocurrio un error con el pago";--}}
-{{--}--}}
-{{--?>--}}
+  <div class="sitemap__bgimg">
+    <div class="sitemap__middle">
+      <h2>¡Lo sentimos!</h2>
+      <hr>
+      <p>Algo ha ido mal durante el proceso de compra. Intentalo otra vez.</p>
+    </div>
+  </div>
 @endsection
