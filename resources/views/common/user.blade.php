@@ -79,13 +79,13 @@
   $(function () {
     $('.user__dropdown').hover(
       function () {
-        $('.user__dropdown-menu', this).stop(true, true).fadeIn(50);
+        $('.user__dropdown-menu', this).stop(true, true).fadeIn(400);
         $(this).toggleClass('user__dropdown--open');
         $('.flechadespliegue').toggleClass('fa-angle-down');
         $('.flechadespliegue').toggleClass('fa-angle-up');
       },
       function () {
-        $('.user__dropdown-menu', this).stop(true, true).fadeOut(50);
+        $('.user__dropdown-menu', this).stop(true, true).fadeOut(400);
         $(this).toggleClass('user__dropdown--open');
         $('.flechadespliegue').toggleClass('fa-angle-down');
         $('.flechadespliegue').toggleClass('fa-angle-up');

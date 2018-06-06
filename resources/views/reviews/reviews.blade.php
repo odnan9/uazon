@@ -28,6 +28,7 @@
             </div>
             <form id="criticasCartForm{{$libro->libros_id}}" action="{{url('cart')}}">
               <input type="hidden" name="libros_id" value="{{$libro->libros_id}}">
+              <input type="hidden" name="key" value="{{$key}}">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <button type="submit" class="lomas__btn">
                 <i class="fa fa-shopping-cart" style="color: #990073"></i>
@@ -47,22 +48,58 @@
     @endforeach
   </div>
 
-  <script>
-    $(document).ready(function () {
-      $('#container_criticas form').each(function() {
-        $(this).submit(function (event) {
-          event.preventDefault();
-          var libros_id = $(this).find("input[name='libros_id']").val();
-          var _token = $(this).find("input[name='_token']").val();
-          url = $(this).attr("action");
-          var posting = $.post( url, {libros_id: libros_id, _token: _token} );
-          posting.done(function( data ) {
-            console.log(data);
-            var content = $( data ).find( "#content" );
-            $( "#result" ).empty().append( content );
+<script>
+  $(document).ready(function () {
+    $('#container_criticas form').each(function() {
+      $(this).submit(function (event) {
+        event.preventDefault();
+        var libros_id = $(this).find("input[name='libros_id']").val();
+        var key = $(this).find("input[name='key']").val();
+        var _token = $(this).find("input[name='_token']").val();
+        url = $(this).attr("action");
+        var posting = $.post( url, {libros_id: libros_id, _token: _token} );
+        posting.done(function( data ) {
+          console.log(data);
+          var content = $( data ).find( "#content" );
+          $( "#result" ).empty().append( content );
+        });
+
+        // Animación que manda la imagen del libro al carrito
+        if (key % 2 === 0) {
+          var itemImg = $(this).parent().parent().find('img:even').eq(0);
+        } else {
+          var itemImg = $(this).parent().parent().find('img:odd').eq(0);
+        }
+        flyToElement($(itemImg), $('.cart__animation'));
+      });
+    });
+  });
+
+  function flyToElement(flyer, flyingTo) {
+    var $func = $(this);
+    var divider = 3;
+    var flyerClone = $(flyer).clone();
+    $(flyerClone).css({position: 'absolute', top: $(flyer).offset().top + "px", left: $(flyer).offset().left + "px", opacity: 1, 'z-index': 1000});
+    $('body').append($(flyerClone));
+    var gotoX = $(flyingTo).offset().left + ($(flyingTo).width() / 2) - ($(flyer).width()/divider);
+    var gotoY = $(flyingTo).offset().top;
+
+    $(flyerClone).animate({
+        opacity: 0.4,
+        left: gotoX,
+        top: gotoY,
+        width: $(flyer).width()/divider,
+        height: $(flyer).height()/divider
+      }, 700,
+      function () {
+        $(flyingTo).fadeOut('fast', function () {
+          $(flyingTo).fadeIn('fast', function () {
+            $(flyerClone).fadeOut('fast', function () {
+              $(flyerClone).remove();
+            });
           });
         });
       });
-    });
-  </script>
+  }
+</script>
 @endsection

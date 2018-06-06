@@ -13,9 +13,7 @@ class pedidosController extends Controller
     {
         return DB::table('pedidos')
             ->leftJoin('pedidos_libros','pedidos.pedidos_id', '=', 'pedidos_libros.fk_pedidos')
-//            ->join('libros', 'pedidos_libros.fk_libros', '=', 'libros.libros_id')
             ->join('users', 'pedidos.fk_users', '=', 'users.id')
-//            ->select('pedidos.*','libros.*','users.*')
             ->select('pedidos.*','users.*')
             ->groupBy('pedidos.pedidos_id')
             ->orderBy('pedidos.pedidos_id')
@@ -26,9 +24,6 @@ class pedidosController extends Controller
     {
         return DB::table('pedidos')
             ->where('pedidos_id', '=', $id)
-//            ->join('pedidos_libros','pedidos.pedidos_id', '=', 'pedidos_libros.fk_pedidos')
-//            ->join('libros', 'pedidos_libros.fk_libros', '=', 'libros.libros_id')
-//            ->join('users', 'pedidos.fk_users', '=', 'users.id')
             ->select('pedidos.*')
             ->orderBy('pedidos.pedidos_id')
             ->get();

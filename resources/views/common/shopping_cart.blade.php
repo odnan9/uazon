@@ -1,6 +1,6 @@
 <!-- Authentication Links -->
-<div class="shoppingcart__dropdown shoppingcart__dropdown--open">
-  <a class="shoppingcart__dropdown--toggle" data-toggle="shoppingcart__dropdown" href="#">
+<div class="cart__animation shoppingcart__dropdown shoppingcart__dropdown--open">
+  <a class="shoppingcart__dropdown--toggle" data-toggle="shoppingcart__dropdown" href="{{url('cart')}}">
     <span class="fa-layers fa-fw">
       <i class="fa fa-shopping-cart"></i>
       <span class="fa fa-layers-counter"><?php Cart::count() ?></span>
@@ -28,7 +28,7 @@
       </fieldset>
       <div class="form-group">
         <button class="shoppingcart__login-button" type="submit">
-          Iniciar compra
+          Ir al carrito
         </button>
       </div>
     </form>
@@ -39,13 +39,13 @@
   $(function () {
     $('.shoppingcart__dropdown').hover(
       function () {
-        $('.shoppingcart__dropdown-menu', this).stop(true, true).fadeIn(50);
+        $('.shoppingcart__dropdown-menu', this).stop(true, true).fadeIn(400);
         $(this).toggleClass('shoppingcart__dropdown--open');
         $('.flechadespliegue').toggleClass('fa-angle-down');
         $('.flechadespliegue').toggleClass('fa-angle-up');
       },
       function () {
-        $('.shoppingcart__dropdown-menu', this).stop(true, true).fadeOut(50);
+        $('.shoppingcart__dropdown-menu', this).stop(true, true).fadeOut(400);
         $(this).toggleClass('shoppingcart__dropdown--open');
         $('.flechadespliegue').toggleClass('fa-angle-down');
         $('.flechadespliegue').toggleClass('fa-angle-up');

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Database\libros;
+use App\Database\pedidos;
+use App\Database\pedidos_libros;
 use Cart;
 use Session;
 use Auth;
@@ -60,8 +62,6 @@ class shoppingCartController extends Controller
       Cart::destroy();
     }
 
-    info($user_id);
-    info(Cart::content());
     if (Cart::count() > 0) {
       $cart = Cart::content();
       Cart::store($user_id);
@@ -70,4 +70,85 @@ class shoppingCartController extends Controller
       return \redirect('home');
     }
   }
+
+  public function preparePurchase() {
+    $user_id = Session::getId();
+    Cart::restore($user_id);
+    if (!Auth::guest()) {
+      $user_id = Auth::getUser()['email'];
+      Cart::restore($user_id);
+    }
+
+    info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+    $metodoPago = Request::get('metodoPago');
+
+    $articulos = [];
+
+    if (Auth::guest()) {
+      $usuarioLogueado = 0;
+    } else {
+      $usuarioLogueado = Auth::getUser()['id'];
+    }
+    info($usuarioLogueado);
+    info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO1");
+
+    $idPedido = pedidos::create(array('estado' => 0, 'total' => Cart::subtotal(), 'fecha' => now(), 'fk_users' => $usuarioLogueado));
+    info($idPedido);
+    info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO2");
+
+    foreach (Cart::content() as $itemInCart) {
+      $articulos = array('fk_pedidos' => $idPedido['pedidos_id'], 'fk_libros' => $itemInCart->id, 'cantidad' => $itemInCart->qty, 'precio' => $itemInCart->subtotal);
+      pedidos_libros::create($articulos);
+    }
+    info(Cart::content());
+    info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO3");
+
+    info($metodoPago);
+    if ($metodoPago == 'paypal') {
+      info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO4");
+      Cart::store($user_id);
+      return view('paypal', array('idPedido' => $idPedido, 'total' => Cart::subtotal(), 'cliente' => $usuarioLogueado, 'opcion' => 'Terminar Compra'));
+    } else {
+      info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO5");
+      return \redirect('home');
+    }
+  }
+  public function compraok() {
+    $user_id = Session::getId();
+    Cart::restore($user_id);
+    if (!Auth::guest()) {
+      $user_id = Auth::getUser()['email'];
+      Cart::restore($user_id);
+    }
+    Cart::destroy();
+    info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO6");
+    info(Request::post());
+    info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO7");
+    return view('compraok', array('post' => Request::post()));
+  }
+
+  public function compraerror() {
+    $user_id = Session::getId();
+    Cart::restore($user_id);
+    if (!Auth::guest()) {
+      $user_id = Auth::getUser()['email'];
+      Cart::restore($user_id);
+    }
+
+    if (Cart::count() > 0) {
+      $cart = Cart::content();
+      Cart::store($user_id);
+      return view('cart', array('cart' => $cart, 'title' => 'Welcome', 'description' => '', 'page' => 'home'));
+    } else {
+      info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO8");
+      info(Request::post());
+      info("NANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO9");
+      return \redirect('home', array('post' => Request::post()));
+    }
+
+
+    return view('compraerror', array('post' => Request::post()));
+    //    return \redirect('home', array('post' => Request::post()));
+  }
+
 }

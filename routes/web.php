@@ -47,7 +47,6 @@ Route::get('/lomasleido', 'lomasleidoController@index')->name('lomasleido');
 
 Route::get('/reviews', 'reviewsController@index')->name('reviews');
 Route::get('/review/{id}', 'reviewsController@show')->name('review');
-//Route::post('/form', 'reviewController@store');
 
 Route::get('/contacto', 'contactoController@index')->name('contacto');
 
@@ -64,6 +63,18 @@ Route::get('/search', 'HomeController@search')->name('search');
 
 Route::get('/cart', 'shoppingCartController@cart');
 Route::post('/cart', 'shoppingCartController@cart');
+Route::get('/purchase', 'shoppingCartController@preparePurchase')->name('purchase');
+Route::post('/purchase', 'shoppingCartController@preparePurchase')->name('purchase');
+Route::get('/compraok', 'shoppingCartController@compraok')->name('compraok');
+Route::post('/compraok', 'shoppingCartController@compraok')->name('compraok');
+Route::get('/compraerror', 'shoppingCartController@compraerror')->name('compraerror');
+Route::post('/compraerror', 'shoppingCartController@compraerror')->name('compraerror');
+
+Route::get('/paywithpaypal', array('as' => 'paywithpaypal','uses' => 'PaypalController@payWithPaypal',));
+Route::post('/paypal', 'PaypalController@postPaymentWithpaypal')->name('paypal');
+Route::get('/paypal', 'PaypalController@getPaymentStatus')->name('status');
+
+
 
 # Middleware groups
 Route::group(['middleware' => 'guest'], function() {});
