@@ -125,13 +125,23 @@ header {
   text-align: right;
   align-self: right;
   border-color: rgba(131,186,0,0.5);
-  font-size: 0.7em;
+  font-size: 0.5em;
 }
 
 .user__forgetpassword:hover {
   border-color: rgba(131,186,0,0.8);
 }
 
+.user__register {
+  text-align: left;
+  align-self: left;
+  border-color: rgba(131,186,0,0.5);
+  font-size: 0.5em;
+}
+
+.user__register:hover {
+  border-color: rgba(131,186,0,0.8);
+}
 
 /* ==========================================================================
    Shopping cart

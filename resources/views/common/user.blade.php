@@ -38,10 +38,8 @@
               @endif
             </div>
           </div>
-
-          <a class="user__forgetpassword" href="{{ route('password.request') }}" style="width: 100%">
-            ¿Recordar password?
-          </a>
+          <a class="user__register" href="{{ route('register') }}" style="width: 30%">Registrarme</a>
+          <a class="user__forgetpassword" href="{{ route('password.request') }}" style="width: 70%">¿Recordar password?</a>
         </fieldset>
         <div class="form-group">
           <button class="user__login-button" type="submit">
