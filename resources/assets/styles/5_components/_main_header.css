@@ -6,7 +6,7 @@ header {
   font-family: var(--font-family--title);
   font-size: 1em;
   letter-spacing: 1px;
-  max-width:1300px;
+  width: 100%;
 }
 
 .header {
