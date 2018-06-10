@@ -4,17 +4,17 @@
 header {
   background-color: var(--color-default--lighter);
   font-family: var(--font-family--title);
-  font-size: 22px;
+  font-size: 1em;
   letter-spacing: 1px;
-  width: 100%;
+  max-width:1300px;
 }
 
 .header {
-  height: 11em;
+  height: 8em;
 }
 
 .main-header {
-  height: 9em;
+  height: 6em;
 }
 
 
@@ -23,6 +23,7 @@ header {
    ========================================================================== */
 .logo {
   padding: 0 0 0.5em 0;
+  z-index: 10;
 }
 
 .logo__img--height {
@@ -35,7 +36,7 @@ header {
    Search
    ========================================================================== */
 .search {
-  padding: 1.5em 0 0 2em;
+  padding: 0 0 0 1em;
   text-align: left;
 }
 
@@ -79,9 +80,30 @@ header {
    User
    ========================================================================== */
 .user {
-  padding: 3em 0 0 2em;
+  font-size: 0.7em;
+  padding: 2em 0 0 2em;
   text-align: left;
   z-index: 10;
+
+  @mixin media--xs {
+    font-size: 0.4em;
+    padding: 1em 0 0 1em;
+  }
+
+  @mixin media--sm {
+    font-size: 0.5em;
+    padding: 1.2em 0 0 1.2em;
+  }
+
+  @mixin media--md {
+    font-size: 0.6em;
+    padding: 1.5em 0 0 1.5em;
+  }
+
+  @mixin media--lg {
+    font-size: 0.7em;
+    padding: 2em 0 0 2em;
+  }
 }
 .user__dropdown {
   overflow: visible;
@@ -125,7 +147,7 @@ header {
   text-align: right;
   align-self: right;
   border-color: rgba(131,186,0,0.5);
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
 
 .user__forgetpassword:hover {
@@ -136,7 +158,7 @@ header {
   text-align: left;
   align-self: left;
   border-color: rgba(131,186,0,0.5);
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
 
 .user__register:hover {
@@ -147,9 +169,30 @@ header {
    Shopping cart
    ========================================================================== */
 .shoppingcart {
+  font-size: 0.7em;
   color: #3f5374;
-  padding: 3em 0 0 0;
+  padding: 2em 0 0 0;
   z-index: 10;
+
+  @mixin media--xs {
+    font-size: 0.4em;
+    padding: 1em 0 0 0;
+  }
+
+  @mixin media--sm {
+    font-size: 0.5em;
+    padding: 1.2em 0 0 0;
+  }
+
+  @mixin media--md {
+    font-size: 0.6em;
+    padding: 1.5em 0 0 0;
+  }
+
+  @mixin media--lg {
+    font-size: 0.7em;
+    padding: 2em 0 0 0;
+  }
 }
 .shoppingcart__dropdown {
   overflow: visible;
@@ -236,6 +279,22 @@ header {
   height: 2em;
   background-color: var(--color-default--dark);
   text-align: center;
+
+  @mixin media--xs {
+    font-size: 0.6em;
+  }
+
+  @mixin media--sm {
+    font-size: 0.9em;
+  }
+
+  @mixin media--md {
+    font-size: 1.2em;
+  }
+
+  @mixin media--lg {
+    font-size: 1.5em;
+  }
 }
 
 .navigation__item {
@@ -252,10 +311,6 @@ header {
   color: white;
 }
 
-.navigation__menuitem--background-color {
-  color: white;
-  background-color: #697DA7;
-  cursor: pointer;
+.navigation__div--click {
+  height: 1.8em;
 }
-
-.navigation__div--click { }

@@ -19,10 +19,24 @@
   box-shadow: 0 0 0 0 var(--color-link);
   transition: background 150ms ease-in-out, box-shadow .4s ease-out;
 
+  @mixin media--xs {
+    font-size: 9px;
+    padding: 3px 7px;
+  }
+
+  @mixin media--sm {
+    font-size: 11px;
+    padding: 6px 13px;
+  }
+
   @mixin media--md {
     font-size: 13px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 8px 19px;
+  }
+
+  @mixin media--lg {
+    font-size: 15px;
+    padding: 10px 25px;
   }
 
   &:hover {
@@ -42,18 +56,24 @@
   padding: 0.5em 1em;
   border-radius: 0.6em;
   margin-right: -10px;
-  /*box-shadow: 0 0 0 0 var(--color-link);*/
-  /*transition: background 150ms ease-in-out, box-shadow .4s ease-out;*/
 
-@mixin media--md {
-  /*font-size: 13px;*/
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-}
+  @mixin media--xs {
+    padding: 0.1em 1em;
+  }
 
-&:hover {
-   /*background: var(--color-default);*/
-   color: #101010;
-   /*box-shadow: 0 0 0 15px transparent;*/
- }
+  @mixin media--sm {
+    padding: 0.3em 1em;
+  }
+
+  @mixin media--md {
+    padding: 0.4em 1em;
+  }
+
+  @mixin media--lg {
+    padding: 0.5em 1em;
+  }
+
+  &:hover {
+    color: #101010;
+  }
 }

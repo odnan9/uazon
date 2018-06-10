@@ -3,7 +3,7 @@
   <div class="user__dropdown user__dropdown--open">
     <a class="user__dropdown--toggle" data-toggle="user__dropdown" href="#">
       <i class="fa fa-user-circle"></i>
-        Mi UAZON
+        UAZON
       <i class="fa fa-angle-down flechadespliegue"></i>
     </a>
     <div class="user__dropdown-menu">

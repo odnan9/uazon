@@ -2,13 +2,13 @@
 <div class="header container-fluid">
   <div class="row main-header">
     <!-- Logo -->
-    <div class="zlogo col-md-2 offset-2">
+    <div class="logo col-md-2 offset-1">
       <a href="{{ route('home') }}">
-        <img class="logo__img--height" align="right" src="/assets/images/logo500x.png">
+        <img class="logo__img--height" align="right" src="/assets/images/logo300x.png">
       </a>
     </div>
     <!-- Search Widget -->
-    <div class="search col-md-3">
+    <div class="search col-md-4">
       @include('common.search_widget')
     </div>
     <div class="user col-md-1">
